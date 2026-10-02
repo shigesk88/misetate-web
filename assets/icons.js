@@ -105,12 +105,132 @@
     </svg>`;
   }
 
+
+  // ---- イラストアイコン（塗り＋線のデュオトーン, 48×48） ----
+  const K = "#121212", Y = "#FFC700", W = "#fff", STEEL = "#C9CED6", WOOD = "#C68B59",
+        RED = "#D9553F", BLUE = "#4FA3E0", BRICK = "#D9774B", GREEN = "#6FAE6A";
+  const D = d => `<svg viewBox="0 0 48 48" fill="none" stroke="${K}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+  const gear = (cx, cy, r1, r2, n) => {
+    let d = "";
+    for (let i = 0; i < n * 2; i++) {
+      const r = i % 2 ? r2 : r1, a0 = (i / (n * 2)) * Math.PI * 2, a1 = ((i + 1) / (n * 2)) * Math.PI * 2;
+      const p = a => `${(cx + r * Math.cos(a)).toFixed(1)} ${(cy + r * Math.sin(a)).toFixed(1)}`;
+      d += (i ? "L" : "M") + p(a0) + "L" + p(a1);
+    }
+    return d + "z";
+  };
+  const ILLUS = {
+    // 業種
+    "内装仕上工事": D(`<rect x="5" y="7" width="30" height="13" rx="4" fill="${Y}"/><path d="M9 11h12" stroke="${W}" stroke-width="2.5"/><path d="M35 13.5h5v10H22v6"/><rect x="18.5" y="29" width="7" height="14" rx="2.5" fill="${K}"/>`),
+    "電気工事": D(`<circle cx="24" cy="24" r="20" fill="#FFF0B3" stroke="none"/><path d="M27 4 11 27h11l-3 17 18-24H25z" fill="${Y}"/>`),
+    "管工事": D(`<path d="M4 10h18a10 10 0 0 1 10 10v6h-8v-6a2 2 0 0 0-2-2H4z" fill="${STEEL}"/><rect x="2" y="8" width="4" height="12" rx="1.5" fill="${Y}"/><rect x="21" y="24" width="14" height="5" rx="1.5" fill="${Y}"/><path d="M28 33c0 0-5 5.5-5 8.5a5 5 0 0 0 10 0c0-3-5-8.5-5-8.5z" fill="${BLUE}"/>`),
+    "大工工事": D(`<g transform="rotate(-35 24 24)"><rect x="20.5" y="16" width="7" height="30" rx="2.5" fill="${WOOD}"/><path d="M9 6h22a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3z" fill="${Y}"/><path d="M34 8c4 0 7 2 9 6-3-1-6-1-9 1" fill="${STEEL}"/><path d="M10 10h8" stroke="${W}" stroke-width="2.5"/></g>`),
+    "左官工事": D(`<path d="M4 42c4-3 8 1 12-2s8 1 12-2 8 1 12-2v6H4z" fill="#E8E2D6"/><path d="M6 32h32l-3 5H9z" fill="${STEEL}"/><path d="M22 32v-8"/><rect x="13" y="8" width="20" height="16" rx="7" fill="${Y}"/>`),
+    "とび・土工・コンクリート工事": D(`<path d="M19 5h10l10 34H9z" fill="#F28C28"/><path d="M16 17h16l2 7H14zM12.5 30h23" fill="${W}"/><rect x="5" y="39" width="38" height="5" rx="1.5" fill="${K}"/>`),
+    "屋根工事": D(`<rect x="10" y="22" width="28" height="21" fill="${W}"/><rect x="20" y="30" width="8" height="13" fill="${Y}"/><path d="M31 9h5v9l-5-4z" fill="${BRICK}"/><path d="M3 25 24 7l21 18-3 4L24 14 6 29z" fill="${RED}"/>`),
+    "タイル・れんが・ブロック工事": D(`<g fill="${BRICK}"><rect x="4" y="8" width="19" height="9" rx="1"/><rect x="25" y="8" width="19" height="9" rx="1"/><rect x="4" y="19" width="9" height="9" rx="1"/><rect x="15" y="19" width="19" height="9" rx="1"/><rect x="36" y="19" width="8" height="9" rx="1"/><rect x="4" y="30" width="19" height="9" rx="1"/><rect x="25" y="30" width="19" height="9" rx="1"/></g><path d="M7 11h6M28 22h6" stroke="#F3B08F" stroke-width="2"/>`),
+    "鋼構造物工事": D(`<rect x="6" y="6" width="36" height="7" rx="1.5" fill="#8A94A6"/><rect x="20.5" y="13" width="7" height="22" fill="${STEEL}"/><rect x="6" y="35" width="36" height="7" rx="1.5" fill="#8A94A6"/><g fill="${Y}"><circle cx="11" cy="9.5" r="1.8"/><circle cx="37" cy="9.5" r="1.8"/><circle cx="11" cy="38.5" r="1.8"/><circle cx="37" cy="38.5" r="1.8"/></g>`),
+    "板金工事": D(`<path d="M4 14q4-6 8 0t8 0 8 0 8 0 8 0v20q-4-6-8 0t-8 0-8 0-8 0-8 0z" fill="${STEEL}"/><path d="M8 13v19M16 15v19M24 13v19M32 15v19M40 13v19" stroke="${W}" stroke-width="1.8"/><path d="M33 4l9 3-3 3" fill="${Y}"/>`),
+    "ガラス工事": D(`<rect x="7" y="5" width="34" height="38" rx="2" fill="#CFE6F5"/><path d="M24 5v38M7 24h34" stroke-width="3"/><path d="M11 15l5-5M11 20l9-9M28 34l5-5" stroke="${W}" stroke-width="2.5"/>`),
+    "塗装工事": D(`<rect x="5" y="20" width="22" height="22" rx="3" fill="${Y}"/><path d="M5 25h22" /><path d="M9 20v4a2 2 0 0 0 4 0v-4" fill="${BLUE}" stroke="none"/><path d="M5 20h22"/><rect x="34" y="4" width="5" height="14" rx="2" fill="${WOOD}"/><rect x="31" y="18" width="11" height="6" rx="1" fill="${STEEL}"/><path d="M31 24h11v10a3 3 0 0 1-3 3h-5a3 3 0 0 1-3-3z" fill="${BLUE}"/>`),
+    "防水工事": D(`<path d="M11 6s-3 3.5-3 5.5a3 3 0 0 0 6 0C14 9.5 11 6 11 6zM37 4s-3 3.5-3 5.5a3 3 0 0 0 6 0C40 7.5 37 4 37 4z" fill="${BLUE}"/><path d="M24 12a18 18 0 0 1 18 18H6a18 18 0 0 1 18-18z" fill="${Y}"/><path d="M24 30v9a3.5 3.5 0 0 1-7 0" stroke-width="2.5"/>`),
+    "建具工事": D(`<rect x="10" y="4" width="28" height="40" rx="1.5" fill="${WOOD}"/><rect x="15" y="9" width="18" height="12" rx="1" fill="#E3B48A"/><rect x="15" y="25" width="18" height="14" rx="1" fill="#E3B48A"/><circle cx="31" cy="23" r="2.2" fill="${Y}"/><path d="M4 44h40"/>`),
+    "機械器具設置工事": D(`<path d="${gear(20, 26, 15, 11.5, 8)}" fill="${STEEL}"/><circle cx="20" cy="26" r="5" fill="${Y}"/><path d="${gear(37, 12, 8.5, 6.5, 6)}" fill="${Y}"/><circle cx="37" cy="12" r="2.5" fill="${W}"/>`),
+    "熱絶縁工事": D(`<path d="M14 30V8a5 5 0 0 1 10 0v22a8 8 0 1 1-10 0z" fill="${W}"/><circle cx="19" cy="36" r="4.5" fill="${RED}" stroke="none"/><rect x="17.5" y="16" width="3" height="18" rx="1.5" fill="${RED}" stroke="none"/><path d="M31 8l5 4-5 4 5 4-5 4 5 4-5 4 5 4" stroke="${Y}" stroke-width="3.5"/><path d="M41 8v32" stroke-width="2"/>`),
+    "電気通信工事": D(`<path d="M10 17a20 20 0 0 1 28 0M15 22a13 13 0 0 1 18 0" stroke="${BLUE}" stroke-width="3"/><rect x="6" y="30" width="36" height="12" rx="3" fill="#4A4F57"/><circle cx="13" cy="36" r="2" fill="${Y}" stroke="none"/><circle cx="20" cy="36" r="2" fill="${GREEN}" stroke="none"/><path d="M24 30v-4"/><circle cx="24" cy="25" r="2" fill="${Y}"/>`),
+    "消防施設工事": D(`<path d="M18 7h8v6h-8z" fill="${K}"/><path d="M26 9h6l5 5v8" /><rect x="14" y="13" width="16" height="31" rx="6" fill="${RED}"/><rect x="14" y="23" width="16" height="9" fill="${W}"/><path d="M14 4h12"/>`),
+    "解体工事": D(`<path d="M6 4h20M10 4v4" stroke-width="3"/><path d="M10 8l4 14" stroke-dasharray="2 2.5"/><circle cx="15" cy="26" r="8" fill="${K}"/><circle cx="12.5" cy="23.5" r="2" fill="#555" stroke="none"/><g fill="${BRICK}"><path d="M28 24h7v7h-7z"/><path d="M36 24h8v7h-8z"/><path d="M26 32h9v6h-9z"/><path d="M36 32h8v6h-8z"/><path d="M26 39h18v5H26z"/></g><path d="M28 20l3-3M34 18l1-4M24 22l-2-2" stroke="${Y}" stroke-width="2.5"/>`),
+
+    // 特長
+    "f-jobs": D(`<path d="M18 13V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/><rect x="5" y="13" width="38" height="28" rx="5" fill="${Y}"/><path d="M5 25h38"/><rect x="20" y="21" width="8" height="8" rx="2" fill="${K}"/><circle cx="39" cy="9" r="6" fill="${RED}"/><path d="M39 6v3.5M39 12h.01" stroke="${W}" stroke-width="2.2"/>`),
+    "f-megaphone": D(`<path d="M6 19h7l20-10v30L13 29H6z" fill="${Y}"/><rect x="4" y="18" width="9" height="12" rx="2" fill="${W}"/><path d="M12 29l3 12h6l-3-11" fill="${W}"/><path d="M39 17a8 8 0 0 1 0 14M42 12a14 14 0 0 1 0 24" stroke-width="2.5"/>`),
+    "f-network": D(`<path d="M24 14v8M24 22 11 32M24 22l13 10" stroke-width="2.5"/><circle cx="24" cy="10" r="6" fill="${Y}"/><circle cx="10" cy="36" r="6" fill="${W}"/><circle cx="38" cy="36" r="6" fill="${W}"/><circle cx="24" cy="22" r="2.5" fill="${K}"/>`),
+    "f-medal": D(`<path d="M14 4h8l4 14h-8zM34 4h-8l-4 14h8z" fill="${BLUE}"/><path d="M26 4h8l-4 14h-8z" fill="${RED}"/><circle cx="24" cy="30" r="13" fill="${Y}"/><path d="m24 22.5 2.3 4.7 5.2.8-3.8 3.6.9 5.1-4.6-2.4-4.6 2.4.9-5.1-3.8-3.6 5.2-.8z" fill="${W}"/>`),
+    "f-profile": D(`<rect x="5" y="9" width="38" height="30" rx="4" fill="${W}"/><path d="M5 15h38" /><circle cx="17" cy="25" r="5" fill="${Y}"/><path d="M10 35c1-3.5 3.8-5 7-5s6 1.5 7 5" fill="${Y}"/><path d="M28 23h10M28 28h10M28 33h6"/><circle cx="9.5" cy="12" r="1" fill="${K}"/>`),
+    "f-free": D(`<rect x="7" y="20" width="34" height="22" rx="2" fill="${W}"/><rect x="5" y="13" width="38" height="8" rx="2" fill="${W}"/><path d="M21 13h6v29h-6z" fill="${RED}"/><path d="M24 13c-3-7-12-8-12-3 0 3 6 3 12 3zM24 13c3-7 12-8 12-3 0 3-6 3-12 3z" fill="${RED}"/>`),
+    "f-chat": D(`<path d="M4 8h26v18H14l-7 6v-6H4z" fill="${Y}"/><path d="M10 14h14M10 19h9"/><path d="M44 20H34v-0 M20 30v10h14l6 5v-5h4V20H34" fill="${W}"/><circle cx="27" cy="35" r="1.3" fill="${K}"/><circle cx="32" cy="35" r="1.3" fill="${K}"/><circle cx="37" cy="35" r="1.3" fill="${K}"/>`),
+    "f-compare": D(`<rect x="4" y="8" width="18" height="30" rx="3" fill="${W}"/><rect x="26" y="8" width="18" height="30" rx="3" fill="${W}"/><path d="M8 32v-6M13 32V20M18 32v-9" stroke-width="3"/><path d="M30 32v-4M35 32v-8M40 32v-5" stroke-width="3" stroke="${STEEL}"/><circle cx="35" cy="38" r="7" fill="${Y}"/><path d="m31.8 38 2.2 2.2 4.2-4.2" stroke-width="2.2"/>`),
+    "f-shield": D(`<path d="M24 4 7 10v11c0 10.5 7 19.5 17 23 10-3.5 17-12.5 17-23V10z" fill="${Y}"/><path d="M24 4v40c10-3.5 17-12.5 17-23V10z" fill="#FFDA4D" stroke="none"/><path d="M24 4 7 10v11c0 10.5 7 19.5 17 23 10-3.5 17-12.5 17-23V10z"/><path d="m16 23 6 6 11-11" stroke-width="3.2"/>`)
+  };
+
+  // ---- お店のタイプ（シーン付きイラストアイコン, 120×120） ----
+  const SHOPIC = {
+    restaurant: { bg: "#FCE6DF", art: `
+      <rect x="18" y="16" width="84" height="5" rx="2.5" fill="${WOOD}"/>
+      <g fill="${RED}"><path d="M22 21h24v18l-12 4-12-4z"/><path d="M48 21h24v18l-12 4-12-4z"/><path d="M74 21h24v18l-12 4-12-4z"/></g>
+      <circle cx="60" cy="31" r="5" fill="${W}" stroke="none"/>
+      <path d="M48 58c-3-4 3-6 0-10M60 58c-3-4 3-6 0-10M72 58c-3-4 3-6 0-10" stroke-width="3"/>
+      <rect x="47" y="96" width="26" height="7" rx="2" fill="${K}"/>
+      <path d="M22 66h76a38 32 0 0 1-76 0z" fill="${W}"/>
+      <path d="M26 80h68" stroke="${RED}" stroke-width="3" stroke-dasharray="6 5"/>
+      <ellipse cx="60" cy="66" rx="38" ry="6" fill="#F3C78A"/>
+      <path d="M40 66c4-3 8 3 12 0s8 3 12 0 8 3 12 0" stroke="#C99550" stroke-width="2"/>
+      <circle cx="78" cy="64" r="5" fill="${Y}"/>
+      <path d="M70 62 104 44M74 64l33-16" stroke="${K}" stroke-width="3.5"/>` },
+    cafe: { bg: "#E2F0E7", art: `
+      <path d="M46 46c-4-6 4-9 0-16M58 44c-4-6 4-9 0-16M70 46c-4-6 4-9 0-16" stroke-width="3"/>
+      <ellipse cx="56" cy="98" rx="40" ry="8" fill="${W}"/>
+      <path d="M86 64h5a10 10 0 0 1 0 20h-7" stroke-width="5" stroke="${K}"/>
+      <path d="M86 64h5a10 10 0 0 1 0 20h-7" stroke-width="2" stroke="#2F6B4F"/>
+      <path d="M26 58h60v16a22 22 0 0 1-22 22H48a22 22 0 0 1-22-22z" fill="#2F6B4F"/>
+      <path d="M32 82h48" stroke="${W}" stroke-width="2.5" stroke-dasharray="1 6"/>
+      <ellipse cx="56" cy="58" rx="30" ry="6" fill="#8B5A3C"/>
+      <path d="M56 61c-5-3-6-6-3-7 1.5-.4 2.5.6 3 1.5.5-.9 1.5-1.9 3-1.5 3 1 2 4-3 7z" fill="${W}" stroke="none"/>
+      <g transform="rotate(30 98 26)"><ellipse cx="98" cy="26" rx="8" ry="11" fill="#8B5A3C"/><path d="M98 16c-3 6 3 14 0 20" stroke="#5E3A24" stroke-width="2"/></g>` },
+    salon: { bg: "#F8E7E2", art: `
+      <path d="M44 86v14M30 102h28" stroke-width="3.5"/>
+      <ellipse cx="44" cy="52" rx="26" ry="34" fill="#B9867A"/>
+      <ellipse cx="44" cy="52" rx="19" ry="27" fill="#DCEBF2"/>
+      <path d="M33 44l12-12M35 54l16-16" stroke="${W}" stroke-width="3"/>
+      <g transform="rotate(-20 90 74)">
+        <path d="M86 40h8l-2 32h-4z" fill="${STEEL}"/><path d="M88 40l2 32" stroke="none"/>
+        <circle cx="82" cy="86" r="8" fill="${Y}"/><circle cx="98" cy="86" r="8" fill="${Y}"/>
+        <circle cx="82" cy="86" r="3.5" fill="#F8E7E2"/><circle cx="98" cy="86" r="3.5" fill="#F8E7E2"/>
+        <path d="M84 79l6-7 6 7" stroke-width="3"/><circle cx="90" cy="72" r="2" fill="${K}"/>
+      </g>
+      <path d="M96 22v10M91 27h10M104 40v6M101 43h6" stroke="${Y}" stroke-width="3"/>` },
+    clinic: { bg: "#E2EDF8", art: `
+      <rect x="18" y="22" width="56" height="70" rx="8" fill="${W}"/>
+      <rect x="34" y="16" width="24" height="12" rx="4" fill="#3E7CB1"/>
+      <path d="M40 42h12v10h10v12H52v10H40V64H30V52h10z" fill="${RED}"/>
+      <path d="M30 84h32" stroke="${STEEL}" stroke-width="3"/>
+      <path d="M86 20v14a12 12 0 0 0 24 0V20" stroke-width="3.5"/>
+      <circle cx="86" cy="19" r="2.5" fill="${K}"/><circle cx="110" cy="19" r="2.5" fill="${K}"/>
+      <path d="M98 46v24a14 14 0 0 1-14 14" stroke-width="3.5"/>
+      <circle cx="80" cy="90" r="10" fill="${Y}"/><circle cx="80" cy="90" r="4" fill="${W}"/>` },
+    retail: { bg: "#ECE7F7", art: `
+      <path d="M40 46v-8a14 14 0 0 1 28 0v8" stroke-width="4"/>
+      <path d="M24 46h60l5 56H19z" fill="#6B5BA8"/>
+      <path d="M24 46h60l2 12H22z" fill="#8576C4"/>
+      <circle cx="40" cy="52" r="2.5" fill="${K}"/><circle cx="68" cy="52" r="2.5" fill="${K}"/>
+      <path d="M38 78l16-8 16 8" stroke="${W}" stroke-width="3"/><path d="M54 70v-4a3 3 0 1 0-3-3" stroke="${W}" stroke-width="2.5"/>
+      <g transform="rotate(25 92 32)"><path d="M82 18h18l8 14-8 14H82z" fill="${Y}"/><circle cx="100" cy="32" r="3" fill="${W}"/><path d="M87 28h6M87 36h8"/></g>
+      <path d="M102 56l3 3M102 59l3-3M14 30l3 3M14 33l3-3" stroke="${K}" stroke-width="2"/>` },
+    office: { bg: "#EAEBEE", art: `
+      <path d="M92 66c-10-4-12-18-4-24 2 8 6 12 4 24zM94 66c8-6 18-4 20-14-8 0-16 4-20 14zM93 66c-2-12 6-22 14-24-2 10-6 16-14 24z" fill="${GREEN}"/>
+      <path d="M84 66h20l-3 20H87z" fill="${W}"/>
+      <rect x="22" y="30" width="60" height="42" rx="4" fill="#4A4F57"/>
+      <rect x="28" y="36" width="48" height="30" rx="2" fill="#DCEBF2"/>
+      <path d="M36 60V50M46 60V44M56 60v-8M66 60V40" stroke="${Y}" stroke-width="5"/>
+      <path d="M46 72l-4 14h20l-4-14" fill="${STEEL}"/>
+      <rect x="10" y="86" width="100" height="7" rx="2" fill="${WOOD}"/>
+      <path d="M18 93v14M102 93v14" stroke-width="3.5"/>
+      <rect x="20" y="76" width="12" height="10" rx="2" fill="${Y}"/><path d="M32 78h3v5h-3"/>` }
+  };
+  function shopIcon(type) {
+    const s = SHOPIC[type] || SHOPIC.cafe;
+    return `<svg viewBox="0 0 120 120" fill="none" stroke="${K}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect width="120" height="120" rx="28" fill="${s.bg}" stroke="none"/>${s.art}</svg>`;
+  }
+
   function hydrate(root = document) {
     root.querySelectorAll("[data-ic]").forEach(el => { if (!el.firstChild) el.innerHTML = ICONS[el.dataset.ic] || ""; });
     root.querySelectorAll("[data-shop]").forEach(el => { if (!el.firstChild) el.innerHTML = shop(el.dataset.shop); });
+    root.querySelectorAll("[data-il]").forEach(el => { if (!el.firstChild) el.innerHTML = ILLUS[el.dataset.il] || ICONS[el.dataset.il] || ""; });
+    root.querySelectorAll("[data-shopic]").forEach(el => { if (!el.firstChild) el.innerHTML = shopIcon(el.dataset.shopic); });
     root.querySelectorAll("[data-person]").forEach(el => { if (!el.firstChild) el.innerHTML = person(el.dataset.person); });
   }
-  window.MT = { icon: n => ICONS[n] || "", shop, person, hydrate };
+  window.MT = { icon: n => ICONS[n] || "", illus: n => ILLUS[n] || "", shop, shopIcon, person, hydrate };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => hydrate());
   else hydrate();
 })();
