@@ -259,3 +259,23 @@
 .k-cta-photo img{position:absolute;inset:0}
 .k-steps li:not(:last-child)::after{top:30px;right:-14px}
 @media (max-width:640px){.k-purpose-box .k-h2{font-size:20px}.k-band-title{font-size:19px}}
+
+/* hero badges（2026-10 改） */
+.k-badges{display:flex;gap:12px;align-items:stretch}
+.k .k-badge{width:auto;height:auto;min-width:150px;display:flex;flex-direction:column;place-items:initial;background:#fff;border-radius:0;box-shadow:0 10px 24px -14px rgba(0,0,0,.45);text-align:center;font-size:inherit;line-height:1.2}
+.k-badge-top{display:block;background:var(--k);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:7px 12px;white-space:nowrap}
+.k .k-badge-big{flex:1;display:flex;align-items:center;justify-content:center;gap:2px;padding:10px 16px 12px;font-family:"Noto Sans JP",sans-serif;font-size:24px;font-weight:900;line-height:1.15;color:var(--ink)}
+.k .k-badge:first-child .k-badge-big{font-size:40px;letter-spacing:.06em}
+.k .k-badge:first-child .k-badge-big::after{content:"";position:absolute}
+.k .k-badge:first-child .k-badge-big{background:linear-gradient(transparent 70%,var(--y) 70%,var(--y) 86%,transparent 86%) center/64% 100% no-repeat}
+.k-badge-big em{font-style:normal;font-family:Inter,sans-serif;font-size:50px;font-weight:900;line-height:.9;letter-spacing:-.02em;margin-right:2px}
+.k .k-badge-big.sm{font-size:24px;line-height:1.2}
+@media (max-width:640px){
+  .k-badges{position:static;gap:8px;margin-bottom:22px}
+  .k .k-badge{min-width:0;flex:1}
+  .k-badge-top{font-size:10px;padding:5px 4px;white-space:normal;line-height:1.35;letter-spacing:0}
+  .k .k-badge-big{padding:8px 4px 10px;font-size:18px}
+  .k .k-badge:first-child .k-badge-big{font-size:30px}
+  .k-badge-big em{font-size:36px}
+  .k .k-badge-big.sm{font-size:17px}
+}
