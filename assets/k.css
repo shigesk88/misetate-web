@@ -322,3 +322,11 @@
   .k-hero-photos::after{clip-path:none}
 }
 @media (max-width:640px){.k-hero-photos::after{clip-path:polygon(0 0,100% 0,100% 100%,0 75%)}}
+
+/* 写真コピーを写真の中央左へ */
+.k .k-photo-copy{left:17%;right:auto;top:50%;bottom:auto;transform:translateY(-50%)}
+.k-hero-photos::after{inset:0;height:auto;background:linear-gradient(90deg,rgba(10,10,10,.6) 0%,rgba(10,10,10,.35) 45%,rgba(10,10,10,0) 75%);clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)}
+@media (max-width:640px){
+  .k .k-photo-copy{left:18px;top:46%;bottom:auto}
+  .k-hero-photos::after{clip-path:polygon(0 0,100% 0,100% 100%,0 86%)}
+}
