@@ -8,23 +8,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=202610021218">
+<link rel="stylesheet" href="assets/style.css?v=202610021226">
+<link rel="stylesheet" href="assets/site.css?v=202610021226">
 </head>
-<body>
+<body class="site">
 
 <!-- ============ Header ============ -->
 <header id="hdr">
   <div class="wrap nav">
-    <a href="#" class="logo">
-      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V5l8 7 8-7v15" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 20v-5l3-2.5 3 2.5v5z" fill="#FFC700"/></svg></span>
-      <span>ミセタテ<small>MISETATE</small></span>
-    </a>
+    <a href="#" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V5l8 7 8-7v15" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 20v-5l3-2.5 3 2.5v5z" fill="#FFC700"/></svg></span><span>ミセタテ<small>MISETATE</small></span></a>
     <nav class="nav-links">
       <a href="#about">ミセタテとは</a>
+      <a href="#service">サービス</a>
       <a href="#flow">ご利用の流れ</a>
       <a href="#categories">対応業種</a>
-      <a href="#requirements">登録条件</a>
-      <a href="partners.html">協力会社を探す</a>
+      <a href="#app">アプリ</a>
       <a href="#faq">よくある質問</a>
     </nav>
     <div class="nav-cta">
@@ -35,256 +33,201 @@
 </header>
 
 <!-- ============ Hero ============ -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="pill"><b>無料</b>協力会社の登録・掲載は無料です</span>
-      <h1>店舗づくりの、<br><span class="mark">ベストマッチ</span>を。</h1>
-      <p class="sub">ミセタテは、お店をつくりたい人と、信頼できる協力会社をつなぐマッチングサービス。工事内容を整理し、条件に合う会社から見積りを集めて比較できます。</p>
-      <div class="hero-actions">
-        <a href="register.html" class="btn btn-primary">協力会社として登録する
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="consult.html" class="btn btn-ghost">お店づくりを相談する</a>
-      </div>
-      <div class="hero-note">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>営業活動は不要</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>見積比較で透明に</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>保険加入の協力会社のみ</span>
-      </div>
+<section class="s-hero">
+  <img class="s-hero-bg" src="https://images.unsplash.com/photo-1739792598744-3512897156e3?auto=format&fit=crop&q=70&w=2000" alt="完成した飲食店の店内">
+  <div class="wrap s-hero-in">
+    <p class="s-hero-en">STORE CONSTRUCTION MATCHING SERVICE</p>
+    <h1>店舗づくりの、<br><span class="mark">ベストマッチ</span>を。</h1>
+    <p class="sub">ミセタテは、お店をつくりたい方と、信頼できる協力会社をつなぐ<br class="pc">店舗工事のマッチングサービスです。</p>
+    <div class="s-hero-actions">
+      <a href="consult.html" class="btn btn-accent">お店づくりを相談する<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="register.html" class="btn btn-line">協力会社として登録する（無料）</a>
     </div>
-
-    <div class="stage">
-      <div class="phone">
-        <div class="screen">
-          <div class="status"><span>9:41</span><span>●●● ▮</span></div>
-          <div class="app-top"><h4>おすすめの協力会社</h4><span class="chip">東京都</span></div>
-          <div class="app-tabs"><span class="on">すべて</span><span>内装</span><span>電気</span><span>空調</span></div>
-          <div class="deck">
-            <div class="card back2"></div>
-            <div class="card back"></div>
-            <div class="card">
-              <div class="card-cover">
-                <div class="pattern"></div>
-                <span class="match">MATCH 92%</span>
-                <span class="verified">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFC700" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>
-                  建設業許可・保険 確認済
-                </span>
-              </div>
-              <div class="card-body">
-                <h5>サンプル内装株式会社</h5>
-                <div class="meta">東京都・神奈川県 ｜ 法人</div>
-                <div class="chips">
-                  <span class="chip y">内装仕上工事</span><span class="chip">大工工事</span><span class="chip">飲食店</span>
-                </div>
-                <div class="kpis">
-                  <div><b>48</b><span>店舗実績</span></div>
-                  <div><b>4.9</b><span>評価</span></div>
-                  <div><b>2日</b><span>見積目安</span></div>
-                </div>
-              </div>
-              <div class="card-actions">
-                <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg></i>
-                <i class="main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h12M12 6l6 6-6 6"/></svg></i>
-                <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></i>
-              </div>
-            </div>
-          </div>
-          <div class="app-nav"><span class="on"></span><span></span><span></span><span></span></div>
-        </div>
-      </div>
-      <div class="float f1">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span>
-        <div><b>新しい募集が届きました</b><small>カフェ新装／渋谷区</small></div>
-      </div>
-      <div class="float f2">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
-        <div><b>見積りを提出しました</b><small>3社で見積比較中</small></div>
-      </div>
+  </div>
+  <div class="s-hero-points">
+    <div class="wrap">
+      <div><b>登録・掲載料 0円</b><span>協力会社の方は無料でご登録いただけます</span></div>
+      <div><b>複数社の見積比較</b><span>費用の内訳が見えるから安心して発注</span></div>
+      <div><b>保険加入を確認済み</b><span>建設業許可・各種保険を事前にチェック</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ Value strip ============ -->
-<div class="strip">
+<!-- ============ News ============ -->
+<div class="s-news">
   <div class="wrap">
-    <div class="strip-grid rv">
-      <div><span class="strip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5z"/></svg></span><div><b>登録・掲載 無料</b><span>今すぐ始められます</span></div></div>
-      <div><span class="strip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>面倒な営業は不要</b><span>待つだけで案件が届く仕組み</span></div></div>
-      <div><span class="strip-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.8-3.5 3.5-5.5 6.5-5.5s5.7 2 6.5 5.5M15 14.5c2.8-.3 5.2 1.3 6 4.5"/></svg></span><div><b>一緒に成長できる</b><span>新しいつながりを</span></div></div>
-    </div>
+    <span class="s-news-tag">お知らせ</span>
+    <a href="#app">ミセタテ公式アプリ（iOS / Android）をリリース予定です。協力会社の方は、アプリで募集の受け取りから見積り提出まで行えるようになります。</a>
   </div>
 </div>
 
-<!-- ============ About / two sides ============ -->
-<!-- ============ How matching works (illustrated) ============ -->
-<section id="how" style="padding-top:72px">
-  <div class="wrap">
-    <div class="rv" style="text-align:center">
-      <div class="eyebrow">How it works</div>
-      <h2 class="h2">ミセタテのしくみ</h2>
-      <p class="lead" style="margin-inline:auto">お店をつくりたい人と協力会社のあいだに、ミセタテが入ります。</p>
-    </div>
-    <div class="how rv">
-      <div class="how-node">
-        <div class="how-art"><div class="how-shop" data-shop="cafe"></div><div class="how-person" data-person="owner"></div></div>
-        <b>お店をつくりたい人</b>
-        <span>飲食店・美容室・クリニックなど</span>
-      </div>
-      <div class="how-arrows">
-        <div class="how-arrow"><i data-ic="chat"></i>工事の相談</div>
-        <div class="how-arrow back"><i data-ic="compare"></i>見積りを比較</div>
-      </div>
-      <div class="how-node hub">
-        <div class="how-hub"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V5l8 7 8-7v15" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 20v-5l3-2.5 3 2.5v5z" fill="#FFC700"/></svg></div>
-        <b>ミセタテ</b>
-        <span>工事内容を整理して<br>条件に合う会社へ募集</span>
-      </div>
-      <div class="how-arrows">
-        <div class="how-arrow"><i data-ic="send"></i>募集を共有</div>
-        <div class="how-arrow back"><i data-ic="doc"></i>見積りを提出</div>
-      </div>
-      <div class="how-node">
-        <div class="how-art crew"><div class="how-person" data-person="staff"></div><div class="how-person" data-person="worker"></div><div class="how-person" data-person="staff"></div></div>
-        <b>協力会社</b>
-        <span>内装・電気・設備・看板など</span>
-      </div>
+<!-- ============ About ============ -->
+<section id="about" class="s-sec">
+  <div class="wrap s-about">
+    <figure class="s-about-photo rv">
+      <img src="https://images.unsplash.com/photo-1608303588026-884930af2559?auto=format&fit=crop&q=70&w=1000&h=1100" alt="店舗の図面を確認する打ち合わせ" loading="lazy">
+      <img class="sub" src="https://images.unsplash.com/photo-1761986757577-140af8859587?auto=format&fit=crop&q=70&w=600&h=600" alt="壁の左官仕上げを行う職人" loading="lazy">
+    </figure>
+    <div class="rv">
+      <p class="s-label"><span>ABOUT</span>ミセタテとは</p>
+      <h2 class="s-h2">店舗づくりを、もっと透明に、<br>もっと簡単に。</h2>
+      <p class="s-text">お店をつくるとき、内装・電気・空調・看板など、工事ごとに業者を探すのは大きな負担です。ミセタテは、お客様の「こんなお店をつくりたい」を丁寧にお伺いし、工事内容や条件を整理したうえで、条件に合う協力会社へ募集を共有します。</p>
+      <p class="s-text">お客様は複数社の見積りを比較して、納得して発注先を選べます。協力会社は営業活動をしなくても、新しいお仕事と出会えます。</p>
+      <dl class="s-figures">
+        <div><dt>登録・掲載料</dt><dd>0<small>円</small></dd></div>
+        <div><dt>対応業種</dt><dd>19<small>業種</small></dd></div>
+        <div><dt>見積り</dt><dd>複数社<small>で比較</small></dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<!-- ============ Shop types ============ -->
-<section id="shops" style="padding-top:40px;padding-bottom:40px">
+<!-- ============ Service ============ -->
+<section id="service" class="s-sec s-gray">
   <div class="wrap">
-    <div class="rv">
-      <div class="eyebrow">Shops</div>
-      <h2 class="h2">こんなお店づくりに</h2>
+    <div class="s-head rv">
+      <p class="s-label"><span>SERVICE</span>サービス</p>
+      <h2 class="s-h2">お客様にも、協力会社にも、<br>無駄のないマッチングを。</h2>
     </div>
-    <div class="shops rv">
-      <figure><div class="shop-ic" data-shopic="restaurant"></div><figcaption>飲食店</figcaption></figure>
-      <figure><div class="shop-ic" data-shopic="cafe"></div><figcaption>カフェ</figcaption></figure>
-      <figure><div class="shop-ic" data-shopic="salon"></div><figcaption>美容室・サロン</figcaption></figure>
-      <figure><div class="shop-ic" data-shopic="clinic"></div><figcaption>クリニック</figcaption></figure>
-      <figure><div class="shop-ic" data-shopic="retail"></div><figcaption>物販・アパレル</figcaption></figure>
-      <figure><div class="shop-ic" data-shopic="office"></div><figcaption>オフィス</figcaption></figure>
+    <div class="s-service">
+      <article class="s-svc rv">
+        <div class="s-svc-photo"><img src="https://images.unsplash.com/photo-1581090690925-3898802525e2?auto=format&fit=crop&q=70&w=1000&h=640" alt="内装の色見本と資料を囲んだ打ち合わせ" loading="lazy"><span>FOR OWNERS</span></div>
+        <div class="s-svc-body">
+          <h3>お店をつくりたい方へ</h3>
+          <p>飲食店・美容室・クリニックなど、新装・改装の工事をまとめてご相談いただけます。</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><div><b>窓口ひとつでまとめて相談</b>業者ごとに探す必要はありません。ミセタテが工事内容を整理します。</div></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><div><b>見積比較で納得の価格に</b>条件に合う複数の協力会社から見積りを集めて比較できます。</div></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><div><b>信頼できる会社だけをご紹介</b>建設業許可・各種保険への加入を確認した会社のみです。</div></li>
+          </ul>
+          <a href="consult.html" class="btn btn-primary">お店づくりを相談する<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="s-svc rv">
+        <div class="s-svc-photo"><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=70&w=1000&h=640" alt="現場で作業する職人" loading="lazy"><span>FOR PARTNERS</span></div>
+        <div class="s-svc-body">
+          <h3>協力会社の方へ</h3>
+          <p>内装・電気・設備・看板など、店舗工事に関わる会社さまを募集しています。</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><div><b>営業しなくても案件が届く</b>条件に合う募集がミセタテから届きます。</div></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><div><b>得意分野・実績をアピール</b>施工事例・対応エリアを掲載し、自社の強みを伝えられます。</div></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><div><b>他業種とのつながり</b>普段つながりのない業者同士でも、一緒にお店づくりに関われます。</div></li>
+          </ul>
+          <a href="register.html" class="btn btn-primary">協力会社として登録する（無料）<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="about">
+<!-- ============ Shops ============ -->
+<section id="shops" class="s-sec">
   <div class="wrap">
-    <div class="rv">
-      <div class="eyebrow">About</div>
-      <h2 class="h2">店舗づくりを、もっと透明に、<br>もっと簡単に。</h2>
-      <p class="lead">ミセタテが間に入り、工事内容や条件を整理してから協力会社へ共有。お客様と協力会社、どちらにとっても無駄のないマッチングを実現します。</p>
-      <div class="seg" role="tablist">
-        <button class="on" data-side="partner"><i data-ic="helmet"></i>協力会社の方</button>
-        <button data-side="owner"><i data-ic="store"></i>お店をつくりたい方</button>
-      </div>
+    <div class="s-head rv">
+      <p class="s-label"><span>WORKS</span>対応する店舗</p>
+      <h2 class="s-h2">こんなお店づくりに</h2>
+      <p class="s-text">新装・改装・移転・居抜き物件の改修まで、さまざまな業態のお店づくりに対応します。</p>
     </div>
-
-    <div class="side on" id="side-partner">
-      <article class="feature rv">
-        <div class="num">01</div>
-        <div class="fi" data-il="f-jobs"></div>
-        <h3>新しい案件・仕事の紹介がある</h3>
-        <p>店舗をつくりたいお客様からの依頼をミセタテが対応し、条件に合う協力会社へご紹介します。</p>
-      </article>
-      <article class="feature rv">
-        <div class="num">02</div>
-        <div class="fi" data-il="f-megaphone"></div>
-        <h3>営業しなくても知ってもらえる</h3>
-        <p>自社で営業活動をしなくても、登録しておくだけで仕事を探しているお客様から見つけてもらえます。</p>
-      </article>
-      <article class="feature rv">
-        <div class="num">03</div>
-        <div class="fi" data-il="f-network"></div>
-        <h3>他業種とのつながりができる</h3>
-        <p>内装・電気・水道・看板・厨房・空調など、普段つながりのない業者同士でも集まれる可能性があります。</p>
-      </article>
-      <article class="feature rv">
-        <div class="num">04</div>
-        <div class="fi" data-il="f-medal"></div>
-        <h3>得意分野をアピールできる</h3>
-        <p>店舗工事の実績・対応エリア・施工事例などを掲載し、自社の強みをしっかり伝えられます。</p>
-      </article>
-      <article class="feature rv">
-        <div class="num">05</div>
-        <div class="fi" data-il="f-profile"></div>
-        <h3>会社・仕事のPRになる</h3>
-        <p>会社名・対応できる工事・エリア・施工実績などを掲載できるので、簡単な営業ツールとしても活用できます。</p>
-      </article>
-      <article class="feature rv" style="background:var(--ink);color:#fff;border-color:var(--ink)">
-        <div class="num" style="color:#8E8E8E">FREE</div>
-        <div class="fi" style="background:var(--accent)" data-il="f-free"></div>
-        <h3>登録・掲載は無料</h3>
-        <p style="color:#B5B5B5">初期費用はかかりません。まずはプロフィールを登録して、募集が届くのを待つだけ。</p>
-      </article>
-    </div>
-
-    <div class="side" id="side-owner">
-      <article class="feature">
-        <div class="num">01</div>
-        <div class="fi" data-il="f-chat"></div>
-        <h3>まとめて相談できる</h3>
-        <p>内装・電気・空調・看板など、業者ごとに探す必要はありません。ミセタテが窓口となり工事内容を整理します。</p>
-      </article>
-      <article class="feature">
-        <div class="num">02</div>
-        <div class="fi" data-il="f-compare"></div>
-        <h3>見積比較で納得の価格に</h3>
-        <p>条件に合う複数の協力会社から見積りを集めて比較。費用の内訳が見えるから、安心して発注できます。</p>
-      </article>
-      <article class="feature">
-        <div class="num">03</div>
-        <div class="fi" data-il="f-shield"></div>
-        <h3>信頼できる会社だけ</h3>
-        <p>建設業許可や各種保険への加入を確認した協力会社のみをご紹介。初めてのお店づくりでも安心です。</p>
-      </article>
+    <div class="s-shops rv">
+      <figure class="shop-card"><img src="https://images.unsplash.com/photo-1551530241-1ccbaa7a9a84?auto=format&fit=crop&q=70&w=800&h=560" alt="飲食店の店内" loading="lazy"><figcaption><small>Restaurant</small>飲食店</figcaption></figure>
+      <figure class="shop-card"><img src="https://images.unsplash.com/photo-1689037676470-b72230d5236e?auto=format&fit=crop&q=70&w=800&h=560" alt="カフェの店内" loading="lazy"><figcaption><small>Cafe</small>カフェ</figcaption></figure>
+      <figure class="shop-card"><img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&q=70&w=800&h=560" alt="美容室・サロンの店内" loading="lazy"><figcaption><small>Salon</small>美容室・サロン</figcaption></figure>
+      <figure class="shop-card"><img src="https://images.unsplash.com/photo-1704455306251-b4634215d98f?auto=format&fit=crop&q=70&w=800&h=560" alt="クリニックの店内" loading="lazy"><figcaption><small>Clinic</small>クリニック</figcaption></figure>
+      <figure class="shop-card"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=70&w=800&h=560" alt="物販・アパレルの店内" loading="lazy"><figcaption><small>Retail</small>物販・アパレル</figcaption></figure>
+      <figure class="shop-card"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=70&w=800&h=560" alt="オフィスの店内" loading="lazy"><figcaption><small>Office</small>オフィス</figcaption></figure>
     </div>
   </div>
 </section>
 
 <!-- ============ Flow ============ -->
-<section id="flow" class="flow-bg">
+<section id="flow" class="s-sec s-gray">
   <div class="wrap">
-    <div class="rv">
-      <div class="eyebrow">Flow</div>
-      <h2 class="h2">登録から仕事のご紹介までの流れ</h2>
-      <p class="lead">登録後は、条件に合う募集が届くのを待つだけ。見積りの提出から受注まで、ミセタテがサポートします。</p>
+    <div class="s-head rv">
+      <p class="s-label"><span>FLOW</span>ご利用の流れ</p>
+      <h2 class="s-h2">ご相談から工事スタートまで</h2>
+      <p class="s-text">見積りの提出から受注まで、ミセタテがサポートします。</p>
     </div>
-    <div class="steps">
-      <div class="step rv"><div class="step-top"><div class="n">01</div><span class="step-ic" data-ic="form"></span></div><h4>ご登録</h4><p>必要事項を入力し、協力会社としてご登録ください。</p><span class="who">協力会社</span></div>
-      <div class="step rv"><div class="step-top"><div class="n">02</div><span class="step-ic" data-ic="chat"></span></div><h4>条件のご依頼</h4><p>店舗をつくりたいお客様と当社で連携し、工事内容などを整理します。</p><span class="who">お客様 × ミセタテ</span></div>
-      <div class="step rv"><div class="step-top"><div class="n">03</div><span class="step-ic" data-ic="send"></span></div><h4>募集の共有</h4><p>当社が工事内容・条件などを協力会社に伝え、見積りを依頼します。</p><span class="who">ミセタテ</span></div>
-      <div class="step rv"><div class="step-top"><div class="n">04</div><span class="step-ic" data-ic="yen"></span></div><h4>見積りのご提出</h4><p>各社からの見積りをご提出いただき、お客様が見積比較を行います。</p><span class="who">協力会社</span></div>
-      <div class="step rv"><div class="step-top"><div class="n">05</div><span class="step-ic" data-ic="handshake"></span></div><h4>受注・工事スタート</h4><p>条件に合う協力会社が決まり、工事を進めていきます。</p><span class="who">協力会社 × お客様</span></div>
+    <ol class="s-flow rv">
+      <li><span class="n">STEP 01</span><h4>ご相談・ご登録</h4><p>お客様は工事のご相談を、協力会社は会社情報のご登録をお願いします。</p><span class="who">お客様／協力会社</span></li>
+      <li><span class="n">STEP 02</span><h4>工事内容の整理</h4><p>ミセタテがお客様と連携し、工事内容・予算・スケジュールなどを整理します。</p><span class="who">お客様 × ミセタテ</span></li>
+      <li><span class="n">STEP 03</span><h4>募集の共有</h4><p>条件に合う協力会社へ工事内容を共有し、見積りを依頼します。</p><span class="who">ミセタテ</span></li>
+      <li><span class="n">STEP 04</span><h4>見積りの提出・比較</h4><p>各社から見積りを提出いただき、お客様が内容を比較します。</p><span class="who">協力会社 → お客様</span></li>
+      <li><span class="n">STEP 05</span><h4>ご契約・工事スタート</h4><p>発注先が決まり次第、工事を進めていきます。</p><span class="who">お客様 × 協力会社</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ App ============ -->
+<section id="app" class="s-app">
+  <div class="wrap s-app-grid">
+    <div class="rv">
+      <span class="s-soon">COMING SOON ／ リリース予定</span>
+      <h2 class="s-h2">ミセタテ公式アプリ、<br>まもなく登場。</h2>
+      <p class="s-text">協力会社の方向けに、スマートフォンアプリをリリース予定です。新しい募集の通知から、見積りの提出、お客様とのやりとりまで、現場からでもスムーズに行えます。</p>
+      <ul class="s-app-feats">
+        <li><b>01</b><div><strong>新着募集をプッシュ通知</strong>条件に合う募集が届いたら、すぐにお知らせ。</div></li>
+        <li><b>02</b><div><strong>スマホで見積り提出</strong>図面や写真を確認しながら、その場で見積りを提出。</div></li>
+        <li><b>03</b><div><strong>実績・プロフィール管理</strong>施工事例の写真をアップして、自社をアピール。</div></li>
+      </ul>
+      <div class="s-stores">
+        <span class="s-store"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8C7 7.3 5.5 8.2 4.7 9.6c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 3 2.4 1.2 0 1.6-.8 3.1-.8s1.8.8 3.1.8 2.1-1.2 2.9-2.4c.9-1.3 1.3-2.6 1.3-2.7 0 0-2.5-1-2.9-3.9zM14.1 5.6c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z"/></svg><span><small>近日公開</small>App Store</span></span>
+        <span class="s-store"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 3.5v17l9.2-8.5zM14.6 13.3l2.3 2.1-10.6 6 8.3-8.1zM14.6 10.7 6.3 2.6l10.6 6zM18.3 9.4l2.6 1.5c.8.5.8 1.7 0 2.2l-2.6 1.5-2.6-2.6z"/></svg><span><small>近日公開</small>Google Play</span></span>
+      </div>
+    </div>
+    <div class="s-phones rv">
+      <div class="phone ph-back">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+          <div class="app-top"><h4>お知らせ</h4><span class="chip">3件</span></div>
+          <div class="ntf"><img src="https://images.unsplash.com/photo-1689037676470-b72230d5236e?auto=format&fit=crop&q=70&w=200&h=200" alt=""><div><b>新しい募集が届きました</b><span>カフェ新装／渋谷区・内装仕上工事</span></div></div>
+          <div class="ntf"><img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&q=70&w=200&h=200" alt=""><div><b>見積りが比較されています</b><span>美容室改装／目黒区・3社で比較中</span></div></div>
+          <div class="ntf"><img src="https://images.unsplash.com/photo-1551530241-1ccbaa7a9a84?auto=format&fit=crop&q=70&w=200&h=200" alt=""><div><b>ご契約が決まりました</b><span>レストラン新装／港区・電気工事</span></div></div>
+        </div>
+      </div>
+      <div class="phone ph-front">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+          <div class="app-top"><h4>新着の募集</h4><span class="chip">東京都</span></div>
+          <div class="app-tabs"><span class="on">すべて</span><span>内装</span><span>電気</span><span>空調</span></div>
+          <div class="deck">
+            <div class="card">
+              <div class="card-cover" style="background:url('https://images.unsplash.com/photo-1689037676470-b72230d5236e?auto=format&fit=crop&q=70&w=600&h=400') center/cover">
+                <span class="match">NEW</span>
+                <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC700" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>カフェ新装工事</span>
+              </div>
+              <div class="card-body">
+                <h5>渋谷区・カフェ（約20坪）</h5>
+                <div class="meta">着工予定 2026年12月 ｜ 見積締切 あと5日</div>
+                <div class="chips"><span class="chip y">内装仕上工事</span><span class="chip">電気工事</span><span class="chip">管工事</span></div>
+                <div class="kpis"><div><b>20坪</b><span>広さ</span></div><div><b>3社</b><span>見積中</span></div><div><b>5日</b><span>締切まで</span></div></div>
+              </div>
+              <div class="app-btn">見積りを提出する</div>
+            </div>
+          </div>
+          <div class="app-nav"><span class="on"></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ Categories ============ -->
-<section id="categories">
+<section id="categories" class="s-sec">
+  <div class="s-banner rv"><img src="https://images.unsplash.com/photo-1768321916027-d0f69289227f?auto=format&fit=crop&q=70&w=2000&h=700" alt="工事中の店舗の内装" loading="lazy"><div class="wrap"><p class="s-label light"><span>CATEGORIES</span>対応業種</p><h2 class="s-h2">店舗づくりに関わる工事を<br>幅広く募集しています。</h2></div></div>
   <div class="wrap">
-    <div class="cat-head rv">
-      <div>
-        <div class="eyebrow">Categories</div>
-        <h2 class="h2">対応業種</h2>
-        <p class="lead">国土交通省の建設業許可業種を基準に、店舗づくりに関わる工事を幅広く募集しています。</p>
-      </div>
-    </div>
+    <p class="s-text" style="margin-top:32px">国土交通省の建設業許可業種を基準にしています。</p>
     <div class="tiles rv"><div class="tile"><i data-il="内装仕上工事"></i><span>内装仕上工事</span></div><div class="tile"><i data-il="電気工事"></i><span>電気工事</span></div><div class="tile"><i data-il="管工事"></i><span>管工事</span></div><div class="tile"><i data-il="大工工事"></i><span>大工工事</span></div><div class="tile"><i data-il="左官工事"></i><span>左官工事</span></div><div class="tile"><i data-il="とび・土工・コンクリート工事"></i><span>とび・土工・コンクリート工事</span></div><div class="tile"><i data-il="屋根工事"></i><span>屋根工事</span></div><div class="tile"><i data-il="タイル・れんが・ブロック工事"></i><span>タイル・れんが・ブロック工事</span></div><div class="tile"><i data-il="鋼構造物工事"></i><span>鋼構造物工事</span></div><div class="tile"><i data-il="板金工事"></i><span>板金工事</span></div><div class="tile"><i data-il="ガラス工事"></i><span>ガラス工事</span></div><div class="tile"><i data-il="塗装工事"></i><span>塗装工事</span></div><div class="tile"><i data-il="防水工事"></i><span>防水工事</span></div><div class="tile"><i data-il="建具工事"></i><span>建具工事</span></div><div class="tile"><i data-il="機械器具設置工事"></i><span>機械器具設置工事</span></div><div class="tile"><i data-il="熱絶縁工事"></i><span>熱絶縁工事</span></div><div class="tile"><i data-il="電気通信工事"></i><span>電気通信工事</span></div><div class="tile"><i data-il="消防施設工事"></i><span>消防施設工事</span></div><div class="tile"><i data-il="解体工事"></i><span>解体工事</span></div></div>
     <p class="note">※ 取扱業種は現在精査中です。正式決定後に更新します。</p>
   </div>
 </section>
 
 <!-- ============ Requirements ============ -->
-<section id="requirements" style="padding-top:0">
+<section id="requirements" class="s-sec s-gray">
   <div class="wrap req-grid">
     <div class="rv">
-      <div class="eyebrow">Requirements</div>
-      <h2 class="h2">ご登録の必須事項</h2>
-      <p class="lead">お客様に安心してご依頼いただくため、以下の保険・制度への加入をお願いしています。事業形態を選んでご確認ください。</p>
+      <p class="s-label"><span>REQUIREMENTS</span>登録条件</p>
+      <h2 class="s-h2">ご登録の必須事項</h2>
+      <p class="s-text">お客様に安心してご依頼いただくため、以下の保険・制度への加入をお願いしています。事業形態を選んでご確認ください。</p>
     </div>
     <div class="req-card rv">
       <div class="req-tabs" role="tablist">
@@ -321,30 +264,14 @@
   </div>
 </section>
 
-<!-- ============ Wanted ============ -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="rv">
-      <div class="eyebrow">We're looking for</div>
-      <h2 class="h2">こんな協力会社さんを募集しています</h2>
-    </div>
-    <div class="wanted">
-      <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l1.5-5h15L21 9v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM5 13v8h14v-8"/></svg>店舗工事の実績がある</div>
-      <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>特定の工事を得意としている</div>
-      <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>対応エリアを広げたい</div>
-      <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>新しい取引先を増やしたい</div>
-      <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4l-5.5 4.5M12 11.5l5.5 4.5"/></svg>他業種とのつながりを作りたい</div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ FAQ ============ -->
-<section id="faq" style="padding-top:0">
+<section id="faq" class="s-sec">
   <div class="wrap faq-grid">
     <div class="rv">
-      <div class="eyebrow">FAQ</div>
-      <h2 class="h2">よくある質問</h2>
-      <p class="lead">その他のご質問は、お問い合わせフォームよりお気軽にどうぞ。</p>
+      <p class="s-label"><span>FAQ</span>よくある質問</p>
+      <h2 class="s-h2">よくある質問</h2>
+      <p class="s-text">その他のご質問は、お問い合わせフォームよりお気軽にどうぞ。</p>
     </div>
     <div class="rv">
       <details open><summary><span class="q">Q</span>登録や掲載に費用はかかりますか？<span class="pm">+</span></summary><p>協力会社の登録・掲載は無料です。初期費用はかかりません。</p></details>
@@ -356,62 +283,46 @@
   </div>
 </section>
 
+
 <!-- ============ CTA ============ -->
-<section id="cta" class="cta">
-  <div class="wrap">
-    <div class="cta-box rv">
-      <div style="position:relative;z-index:1">
-        <h2>一緒に、いいお店を<br>つくりませんか？</h2>
-        <p>あなたの技術・経験が、次の「お店づくり」を支えます。<br>まずは無料で協力会社としてご登録ください。</p>
-      </div>
-      <div class="cta-actions">
-        <div class="cta-crew"><div data-person="staff"></div><div data-person="worker"></div><div data-person="owner"></div></div>
-        <a href="register.html" class="btn btn-primary">協力会社として登録する（無料）</a>
-        <a href="consult.html" class="btn btn-ghost" style="box-shadow:none">お店づくりを相談する</a>
-      </div>
+<section class="s-cta">
+  <img src="https://images.unsplash.com/photo-1774977863604-59f4e6d37a90?auto=format&fit=crop&q=70&w=2000&h=900" alt="天井の工事を行う職人" loading="lazy">
+  <div class="wrap s-cta-in rv">
+    <h2>一緒に、いいお店をつくりませんか？</h2>
+    <p>お店をつくりたい方も、技術を活かしたい協力会社の方も、まずはお気軽にご相談ください。</p>
+    <div class="s-hero-actions" style="justify-content:center">
+      <a href="consult.html" class="btn btn-accent">お店づくりを相談する<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="register.html" class="btn btn-line">協力会社として登録する（無料）</a>
     </div>
   </div>
 </section>
 
-<footer>
+<footer class="s-foot">
   <div class="wrap">
     <div class="foot">
       <div>
-        <a href="#" class="logo">
-          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V5l8 7 8-7v15" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 20v-5l3-2.5 3 2.5v5z" fill="#FFC700"/></svg></span>
-          <span>ミセタテ<small>MISETATE</small></span>
-        </a>
-        <p style="font-size:13px;color:var(--ink-3);margin-top:14px">店舗づくりを、もっと透明に、もっと簡単に。</p>
+        <a href="#" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V5l8 7 8-7v15" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 20v-5l3-2.5 3 2.5v5z" fill="#FFC700"/></svg></span><span>ミセタテ<small>MISETATE</small></span></a>
+        <p class="s-foot-copy">店舗づくりを、もっと透明に、もっと簡単に。</p>
       </div>
       <div class="foot-links">
-        <div><b>サービス</b><a href="#about">ミセタテとは</a><a href="#flow">ご利用の流れ</a><a href="#categories">対応業種</a><a href="partners.html">協力会社を探す</a></div>
-        <div><b>協力会社の方</b><a href="#requirements">登録条件</a><a href="register.html">協力会社登録</a><a href="#faq">よくある質問</a></div>
+        <div><b>サービス</b><a href="#about">ミセタテとは</a><a href="#service">サービス</a><a href="#flow">ご利用の流れ</a><a href="#categories">対応業種</a><a href="#app">公式アプリ</a></div>
+        <div><b>協力会社の方</b><a href="#requirements">登録条件</a><a href="register.html">協力会社登録</a><a href="partners.html">協力会社を探す</a><a href="#faq">よくある質問</a></div>
         <div><b>運営</b><a href="#">運営会社</a><a href="#">プライバシーポリシー</a><a href="#">お問い合わせ</a></div>
       </div>
     </div>
-    <p class="copy">© 2026 MISETATE</p>
+    <p class="copy">© 2026 MISETATE　｜　Photos: Unsplash</p>
   </div>
 </footer>
 
-<script src="assets/icons.js?v=202610021218"></script>
+<script src="assets/icons.js?v=202610021226"></script>
 <script>
-// header border on scroll
 const hdr=document.getElementById('hdr');
-addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passive:true});
-
-// segmented: partner / owner
-document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.seg button').forEach(x=>x.classList.toggle('on',x===b));
-  document.querySelectorAll('.side').forEach(s=>s.classList.toggle('on',s.id==='side-'+b.dataset.side));
-}));
-
-// requirement tabs
+const onScroll=()=>hdr.classList.toggle('scrolled',scrollY>8);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
 document.querySelectorAll('.req-tabs button').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.req-tabs button').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.req-panel').forEach(p=>p.classList.toggle('on',p.id==='req-'+b.dataset.req));
 }));
-
-// reveal on scroll
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
