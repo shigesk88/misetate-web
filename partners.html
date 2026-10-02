@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>協力会社を探す｜ミセタテ</title>
+<meta name="description" content="ミセタテに登録している、建設業許可・保険加入を確認済みの協力会社一覧です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V5l8 7 8-7v15" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 20v-5l3-2.5 3 2.5v5z" fill="#FFC700"/></svg></span>
+      <span>ミセタテ<small>MISETATE</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">ミセタテとは</a>
+      <a href="index.html#flow">ご利用の流れ</a>
+      <a href="partners.html" style="color:var(--ink);font-weight:700">協力会社を探す</a>
+      <a href="index.html#faq">よくある質問</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="consult.html" class="btn btn-ghost">工事を相談する</a>
+      <a href="register.html" class="btn btn-primary">協力会社登録</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <div class="crumb"><a href="index.html">ホーム</a> ／ 協力会社を探す</div>
+    <h1>協力会社を探す<span class="sample-badge">SAMPLE</span></h1>
+    <p>建設業許可と保険加入を確認済みの協力会社だけが掲載されています。気になる会社があれば、まとめて見積比較をご依頼いただけます。</p>
+  </div>
+
+  <div class="toolbar">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input class="input" id="q" placeholder="会社名・キーワードで検索" aria-label="キーワード検索">
+    </div>
+    <select class="input" id="area" aria-label="エリア">
+      <option value="">すべてのエリア</option>
+      <option>東京都</option><option>神奈川県</option><option>埼玉県</option><option>千葉県</option>
+    </select>
+    <select class="input" id="sort" aria-label="並び替え">
+      <option value="match">おすすめ順</option>
+      <option value="works">実績が多い順</option>
+      <option value="rating">評価が高い順</option>
+    </select>
+  </div>
+  <div class="filter-chips" id="chips"></div>
+
+  <div class="result-meta"><span id="meta"></span><span>※ 掲載企業はすべて架空のサンプルです</span></div>
+  <div class="pgrid" id="grid"></div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true"></aside>
+<div class="toast" id="toast"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="index.html" class="logo">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V5l8 7 8-7v15" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 20v-5l3-2.5 3 2.5v5z" fill="#FFC700"/></svg></span>
+          <span>ミセタテ<small>MISETATE</small></span>
+        </a>
+        <p style="font-size:13px;color:var(--ink-3);margin-top:14px">店舗づくりを、もっと透明に、もっと簡単に。</p>
+      </div>
+      <div class="foot-links">
+        <div><b>サービス</b><a href="index.html#about">ミセタテとは</a><a href="index.html#flow">ご利用の流れ</a><a href="partners.html">協力会社を探す</a></div>
+        <div><b>協力会社の方</b><a href="index.html#requirements">登録条件</a><a href="register.html">協力会社登録</a><a href="index.html#faq">よくある質問</a></div>
+        <div><b>運営</b><a href="#">運営会社</a><a href="#">プライバシーポリシー</a><a href="#">お問い合わせ</a></div>
+      </div>
+    </div>
+    <p class="copy">© 2026 MISETATE</p>
+  </div>
+</footer>
+
+<script src="assets/icons.js"></script>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+
+// ---- サンプルデータ（すべて架空） ----
+const P=[
+  {id:1,name:"サンプル内装株式会社",ini:"内",type:"法人",areas:["東京都","神奈川県"],trades:["内装仕上工事","大工工事"],genres:["飲食店","カフェ"],works:48,rating:4.9,days:2,match:92,c:["#2A2A2A","#555"],
+   pr:"飲食店・カフェの内装を中心に、設計段階からのご相談に対応。短工期の居抜き改装を得意としています。"},
+  {id:2,name:"ライトワークス電設",ini:"ラ",type:"法人",areas:["東京都","埼玉県"],trades:["電気工事","電気通信工事"],genres:["物販","オフィス"],works:76,rating:4.8,days:1,match:88,c:["#3B3A2E","#77703F"],
+   pr:"照明計画から分電盤・通信配線まで一括対応。夜間・休業日の施工もご相談ください。"},
+  {id:3,name:"アクア設備工業",ini:"ア",type:"中小事業主",areas:["東京都","千葉県"],trades:["管工事","機械器具設置工事"],genres:["飲食店","クリニック"],works:35,rating:4.7,days:3,match:85,c:["#1F2D33","#4A6470"],
+   pr:"厨房まわりの給排水・ガス、グリストラップ設置の実績多数。保健所対応のアドバイスも可能です。"},
+  {id:4,name:"ペイントラボ",ini:"ペ",type:"個人事業主",areas:["神奈川県"],trades:["塗装工事","左官工事"],genres:["カフェ","美容・サロン"],works:22,rating:5.0,days:2,match:81,c:["#3A2E2A","#7A5A4D"],
+   pr:"モルタル・漆喰・デザイン塗装など、空間の印象を決める仕上げを丁寧に仕上げます。"},
+  {id:5,name:"フロント建具製作所",ini:"フ",type:"法人",areas:["埼玉県","東京都"],trades:["建具工事","ガラス工事"],genres:["物販","飲食店"],works:61,rating:4.6,days:4,match:78,c:["#262B26","#58635A"],
+   pr:"店舗ファサードの自動ドア・ガラススクリーン、造作建具を自社工場で製作します。"},
+  {id:6,name:"エアフロー空調サービス",ini:"エ",type:"法人",areas:["東京都","神奈川県","千葉県"],trades:["管工事","熱絶縁工事"],genres:["オフィス","フィットネス"],works:104,rating:4.8,days:2,match:76,c:["#22262E","#4B5568"],
+   pr:"業務用エアコンの新設・入替・移設に対応。省エネ機器への更新提案もお任せください。"},
+  {id:7,name:"クリアサイン工房",ini:"ク",type:"中小事業主",areas:["千葉県","東京都"],trades:["鋼構造物工事","板金工事"],genres:["物販","飲食店","美容・サロン"],works:57,rating:4.7,days:3,match:74,c:["#2E2626","#6B4F4F"],
+   pr:"袖看板・壁面サインの製作から取付まで。屋外広告物の申請サポートも行っています。"},
+  {id:8,name:"リノ解体サービス",ini:"リ",type:"法人",areas:["埼玉県","千葉県"],trades:["解体工事","とび・土工・コンクリート工事"],genres:["飲食店","物販"],works:89,rating:4.5,days:1,match:70,c:["#2B2B27","#5E5E52"],
+   pr:"原状回復・スケルトン戻しに対応。近隣配慮と産廃処理の適正管理を徹底しています。"},
+  {id:9,name:"タイルスタジオ東",ini:"タ",type:"個人事業主",areas:["東京都"],trades:["タイル・れんが・ブロック工事","防水工事"],genres:["カフェ","美容・サロン"],works:18,rating:4.9,days:3,match:68,c:["#2C2A30","#5C5568"],
+   pr:"カウンターや壁面のタイル張り、水まわりの防水まで。小規模工事も歓迎です。"}
+];
+const TRADES=["すべて",...new Set(P.flatMap(p=>p.trades))];
+let tradeF="すべて";
+
+$("#chips").innerHTML=TRADES.map((t,i)=>`<button class="${i?"":"on"}" data-t="${t}">${i?`<i>${MT.icon(t)}</i> `:""}${t}</button>`).join("");
+$("#chips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;tradeF=b.dataset.t;$$("#chips button").forEach(x=>x.classList.toggle("on",x===b));render()});
+["q","area","sort"].forEach(id=>$("#"+id).addEventListener("input",render));
+
+const verifiedIcon='<svg viewBox="0 0 24 24" fill="#FFC700"><path d="M12 2l2.4 2.1 3.2-.3.9 3.1 2.8 1.6-1.1 3 1.1 3-2.8 1.6-.9 3.1-3.2-.3L12 22l-2.4-2.1-3.2.3-.9-3.1L2.7 15.5l1.1-3-1.1-3 2.8-1.6.9-3.1 3.2.3z"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="#121212" stroke-width="2" fill="none"/></svg>';
+const cover=p=>`background:linear-gradient(135deg,${p.c[0]},${p.c[1]})`;
+const SHOPOF={"飲食店":"restaurant","カフェ":"cafe","美容・サロン":"salon","クリニック":"clinic","物販":"retail","オフィス":"office","フィットネス":"office"};
+const art=p=>`<div class="pcover-art">${MT.shop(SHOPOF[p.genres[0]]||"cafe")}</div>`;
+
+function render(){
+  const q=$("#q").value.trim(),area=$("#area").value,sort=$("#sort").value;
+  let list=P.filter(p=>(tradeF==="すべて"||p.trades.includes(tradeF))&&(!area||p.areas.includes(area))&&(!q||(p.name+p.pr+p.trades.join()+p.genres.join()).includes(q)));
+  list.sort((a,b)=>sort==="works"?b.works-a.works:sort==="rating"?b.rating-a.rating:b.match-a.match);
+  $("#meta").textContent=`${list.length}件の協力会社`;
+  $("#grid").innerHTML=list.length?list.map(p=>`
+    <button class="pcard" data-id="${p.id}">
+      <div class="pcover" style="${cover(p)}"><div class="pattern"></div>${art(p)}<span class="match">MATCH ${p.match}%</span><span class="avatar">${p.ini}</span></div>
+      <div class="pbody">
+        <h3>${p.name}${verifiedIcon}</h3>
+        <div class="meta">${p.areas.join("・")} ｜ ${p.type}</div>
+        <div class="chips">${p.trades.map((t,i)=>`<span class="chip ${i?"":"y"}"><i>${MT.icon(t)}</i> ${t}</span>`).join("")}</div>
+        <div class="kpis"><div><b>${p.works}</b><span>店舗実績</span></div><div><b>${p.rating.toFixed(1)}</b><span>評価</span></div><div><b>${p.days}日</b><span>見積目安</span></div></div>
+      </div>
+    </button>`).join(""):`<div class="empty">条件に合う協力会社が見つかりませんでした</div>`;
+}
+
+// ---- detail drawer ----
+const drawer=$("#drawer"),scrim=$("#scrim");
+function open(id){
+  const p=P.find(x=>x.id===id);
+  drawer.innerHTML=`
+    <button class="drawer-close" id="close" aria-label="閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <div class="pcover" style="${cover(p)}"><div class="pattern"></div>${art(p)}<span class="match">MATCH ${p.match}%</span><span class="avatar">${p.ini}</span></div>
+    <div class="dbody">
+      <h2>${p.name}${verifiedIcon.replace("<svg","<svg width='20' height='20'")}</h2>
+      <div class="meta" style="font-size:13px;color:var(--ink-3)">${p.areas.join("・")} ｜ ${p.type}</div>
+      <div class="kpis" style="margin-top:18px"><div><b>${p.works}</b><span>店舗実績</span></div><div><b>${p.rating.toFixed(1)}</b><span>評価</span></div><div><b>${p.days}日</b><span>見積目安</span></div></div>
+      <div class="dsec"><h4>自己PR</h4><p>${p.pr}</p></div>
+      <div class="dsec"><h4>対応業種</h4><div class="chips" style="margin:0">${p.trades.map(t=>`<span class="chip y"><i>${MT.icon(t)}</i> ${t}</span>`).join("")}</div></div>
+      <div class="dsec"><h4>得意な店舗ジャンル</h4><div class="chips" style="margin:0">${p.genres.map(t=>`<span class="chip">${t}</span>`).join("")}</div></div>
+      <div class="dsec"><h4>施工事例</h4><div class="works">${p.genres.slice(0,2).concat(["改装工事","新装工事"]).slice(0,4).map((g,i)=>`<div style="background:linear-gradient(${135+i*30}deg,#F3F2EC,#E2E1DA)"><div class="work-art">${MT.shop(SHOPOF[g]||["cafe","retail","restaurant","salon"][i])}</div><span>${g}</span></div>`).join("")}</div></div>
+      <div class="dsec"><h4>ミセタテ確認済み</h4><div class="badges">
+        ${["建設業許可","労災保険","請負業者賠償責任保険"].map(b=>`<div><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="3" width="12" height="12"><path d="M20 6 9 17l-5-5"/></svg></span>${b}</div>`).join("")}
+      </div></div>
+    </div>
+    <div class="dfoot">
+      <button class="btn btn-ghost" id="save">♡ 保存</button>
+      <a class="btn btn-primary" href="consult.html" data-pick="${p.name}">この会社を含めて相談する</a>
+    </div>`;
+  drawer.classList.add("on");scrim.classList.add("on");drawer.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
+  $("#close").addEventListener("click",close);
+  drawer.querySelector("[data-pick]").addEventListener("click",e=>{try{sessionStorage.setItem("misetate-pick",e.currentTarget.dataset.pick)}catch(_){}});
+  $("#save").addEventListener("click",()=>toast("保存しました（サンプル）"));
+  $("#close").focus();
+}
+function close(){drawer.classList.remove("on");scrim.classList.remove("on");drawer.setAttribute("aria-hidden","true");document.body.style.overflow=""}
+$("#grid").addEventListener("click",e=>{const c=e.target.closest(".pcard");if(c)open(+c.dataset.id)});
+scrim.addEventListener("click",close);
+addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),1800)}
+
+const hdr=$("#hdr");addEventListener("scroll",()=>hdr.classList.toggle("scrolled",scrollY>8),{passive:true});
+render();
+</script>
+</body>
+</html>

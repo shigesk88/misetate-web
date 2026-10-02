@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>協力会社登録｜ミセタテ</title>
+<meta name="description" content="ミセタテの協力会社登録フォーム。登録・掲載は無料です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V5l8 7 8-7v15" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 20v-5l3-2.5 3 2.5v5z" fill="#FFC700"/></svg></span>
+      <span>ミセタテ<small>MISETATE</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about">ミセタテとは</a>
+      <a href="index.html#flow">ご利用の流れ</a>
+      <a href="partners.html">協力会社を探す</a>
+      <a href="index.html#faq">よくある質問</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="consult.html" class="btn btn-ghost">工事を相談する</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <div class="crumb"><a href="index.html">ホーム</a> ／ 協力会社登録</div>
+    <h1>協力会社登録<span class="sample-badge">SAMPLE</span></h1>
+    <p>登録・掲載は無料です。約5分で入力できます。ご登録内容を確認後、担当者よりご連絡いたします。</p>
+  </div>
+
+  <div class="form-layout">
+    <aside>
+      <ol class="stepper" id="stepper">
+        <li class="on"><i>1</i>会社情報</li>
+        <li><i>2</i>業種・エリア</li>
+        <li><i>3</i>保険・許可</li>
+        <li><i>4</i>内容の確認</li>
+      </ol>
+      <div class="aside-card">
+        <b>ご用意いただくもの</b>
+        建設業許可証、各種保険の加入が確認できる書類（写真・PDFで可）
+      </div>
+    </aside>
+
+    <div>
+      <div class="progress"><span id="bar" style="width:25%"></span></div>
+      <form class="panel" id="form" novalidate>
+
+        <!-- STEP 1 -->
+        <section class="fstep on" data-step="1">
+          <h2 class="sh"><i data-ic="building"></i>会社情報</h2>
+          <p class="desc">まずは事業形態と基本情報を入力してください。</p>
+          <div class="fields">
+            <div class="field full">
+              <span class="lbl">事業形態<span class="req">必須</span></span>
+              <div class="choice">
+                <label><input type="radio" name="type" value="corp" data-label="法人" required><i class="ch-ic" data-ic="building"></i>法人<small>株式会社・合同会社など</small></label>
+                <label><input type="radio" name="type" value="sme" data-label="中小事業主"><i class="ch-ic" data-ic="team"></i>中小事業主<small>個人事業主＋労働者1人以上を年間100日以上雇用</small></label>
+                <label><input type="radio" name="type" value="solo" data-label="個人事業主"><i class="ch-ic" data-ic="person"></i>個人事業主<small>一人親方など</small></label>
+              </div>
+              <span class="errmsg">事業形態を選択してください</span>
+            </div>
+            <div class="field full">
+              <label for="company">会社名・屋号<span class="req">必須</span></label>
+              <input class="input" id="company" name="company" placeholder="例）株式会社ミセタテ工務" required>
+              <span class="errmsg">会社名・屋号を入力してください</span>
+            </div>
+            <div class="field">
+              <label for="rep">代表者名<span class="req">必須</span></label>
+              <input class="input" id="rep" name="rep" placeholder="例）山田 太郎" required>
+              <span class="errmsg">代表者名を入力してください</span>
+            </div>
+            <div class="field">
+              <label for="person">ご担当者名<span class="opt">任意</span></label>
+              <input class="input" id="person" name="person" placeholder="代表者と異なる場合">
+            </div>
+            <div class="field">
+              <label for="tel">電話番号<span class="req">必須</span></label>
+              <input class="input" id="tel" name="tel" type="tel" inputmode="tel" placeholder="例）03-1234-5678" required pattern="[0-9\-]{10,13}">
+              <span class="errmsg">電話番号を正しく入力してください</span>
+            </div>
+            <div class="field">
+              <label for="email">メールアドレス<span class="req">必須</span></label>
+              <input class="input" id="email" name="email" type="email" placeholder="例）info@example.co.jp" required>
+              <span class="errmsg">メールアドレスを正しく入力してください</span>
+            </div>
+            <div class="field">
+              <label for="pref">所在地（都道府県）<span class="req">必須</span></label>
+              <select class="input" id="pref" name="pref" required>
+                <option value="">選択してください</option>
+                <option>東京都</option><option>神奈川県</option><option>埼玉県</option><option>千葉県</option><option>茨城県</option><option>栃木県</option><option>群馬県</option><option>その他</option>
+              </select>
+              <span class="errmsg">都道府県を選択してください</span>
+            </div>
+            <div class="field">
+              <label for="addr">市区町村・番地<span class="req">必須</span></label>
+              <input class="input" id="addr" name="addr" placeholder="例）渋谷区神南1-2-3" required>
+              <span class="errmsg">住所を入力してください</span>
+            </div>
+            <div class="field full">
+              <label for="url">ホームページ・SNS<span class="opt">任意</span></label>
+              <input class="input" id="url" name="url" type="url" placeholder="https://">
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="fstep" data-step="2">
+          <h2 class="sh"><i data-ic="tool"></i>業種・エリア</h2>
+          <p class="desc">対応できる工事とエリアを選ぶと、条件に合う募集が届きます。</p>
+          <div class="fields">
+            <div class="field full" data-group="trade">
+              <span class="lbl">対応業種<span class="req">必須</span> <span class="count" id="tradeCount"></span></span>
+              <div class="tagpick" id="trades"></div>
+              <span class="hint">国土交通省の建設業許可業種を基準にしています（複数選択可）</span>
+              <span class="errmsg">1つ以上選択してください</span>
+            </div>
+            <div class="field full" data-group="genre">
+              <span class="lbl">得意な店舗ジャンル<span class="opt">任意</span></span>
+              <div class="tagpick" id="genres"></div>
+            </div>
+            <div class="field full" data-group="area">
+              <span class="lbl">対応エリア<span class="req">必須</span></span>
+              <div class="tagpick" id="areas"></div>
+              <span class="errmsg">1つ以上選択してください</span>
+            </div>
+            <div class="field">
+              <label for="works">店舗工事の実績件数<span class="req">必須</span></label>
+              <select class="input" id="works" name="works" required>
+                <option value="">選択してください</option>
+                <option>まだない</option><option>1〜9件</option><option>10〜29件</option><option>30〜99件</option><option>100件以上</option>
+              </select>
+              <span class="errmsg">選択してください</span>
+            </div>
+            <div class="field">
+              <label for="staff">従業員数<span class="opt">任意</span></label>
+              <select class="input" id="staff" name="staff">
+                <option value="">選択してください</option>
+                <option>1名</option><option>2〜5名</option><option>6〜20名</option><option>21名以上</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="pr">自己PR<span class="opt">任意</span></label>
+              <textarea class="input" id="pr" name="pr" maxlength="400" placeholder="得意な工事、こだわり、対応スピードなど。プロフィールに掲載されます。"></textarea>
+              <span class="hint"><span id="prCount">0</span> / 400</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="fstep" data-step="3">
+          <h2 class="sh"><i data-ic="shield"></i>保険・許可</h2>
+          <p class="desc">事業形態に応じた必須の保険・制度への加入状況を教えてください。</p>
+          <div class="fields">
+            <div class="field full" data-group="ins">
+              <span class="lbl">加入状況<span class="req">必須</span> <span class="count" id="typeLabel"></span></span>
+              <div class="ins" id="insList"></div>
+              <span class="errmsg">すべての項目に回答してください</span>
+            </div>
+            <div class="field full">
+              <label for="license">建設業許可番号<span class="req">必須</span></label>
+              <input class="input" id="license" name="license" placeholder="例）東京都知事 許可（般-6）第123456号" required>
+              <span class="errmsg">許可番号を入力してください</span>
+            </div>
+            <div class="field full">
+              <span class="lbl">許可証・保険証書の写し<span class="opt">任意</span></span>
+              <label class="drop" id="drop">
+                <input type="file" id="file" multiple accept="image/*,.pdf" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+                <b>クリックまたはドラッグして追加</b>
+                <small>JPG・PNG・PDF（各10MBまで）／あとから提出も可能です</small>
+              </label>
+              <div class="files" id="files"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 4 -->
+        <section class="fstep" data-step="4">
+          <h2 class="sh"><i data-ic="form"></i>内容の確認</h2>
+          <p class="desc">以下の内容で登録します。修正する場合は「戻る」から編集してください。</p>
+          <dl class="confirm" id="confirm"></dl>
+          <div class="field" style="margin-top:24px">
+            <label class="consent"><input type="checkbox" id="agree"><span><a href="#" style="text-decoration:underline">利用規約</a>・<a href="#" style="text-decoration:underline">プライバシーポリシー</a>に同意します</span></label>
+            <span class="errmsg">同意が必要です</span>
+          </div>
+        </section>
+
+        <!-- DONE -->
+        <section class="fstep" data-step="5">
+          <div class="done">
+            <div class="cta-crew" style="margin-bottom:18px"><div data-person="staff"></div><div data-person="worker"></div><div data-person="staff"></div></div>
+            <div class="big" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h2>ご登録ありがとうございます</h2>
+            <p>内容を確認のうえ、2営業日以内に担当者よりご連絡いたします。</p>
+            <ul class="next-list">
+              <li><b>1</b>ミセタテにて登録内容・書類を確認</li>
+              <li><b>2</b>プロフィールを公開</li>
+              <li><b>3</b>条件に合う募集をお届け</li>
+            </ul>
+            <a href="index.html" class="btn btn-primary">トップへ戻る</a>
+          </div>
+        </section>
+
+        <div class="form-nav" id="nav">
+          <button type="button" class="btn btn-ghost" id="prev" hidden>戻る</button>
+          <span></span>
+          <button type="button" class="btn btn-primary" id="next">次へ
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/icons.js"></script>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+
+// ---- master data (業種は精査中のサンプル) ----
+const TRADES=["内装仕上工事","電気工事","管工事","大工工事","左官工事","とび・土工・コンクリート工事","屋根工事","タイル・れんが・ブロック工事","鋼構造物工事","板金工事","ガラス工事","塗装工事","防水工事","建具工事","機械器具設置工事","熱絶縁工事","電気通信工事","消防施設工事","解体工事"];
+const GENRES=["飲食店","カフェ","物販","美容・サロン","クリニック","オフィス","フィットネス","その他"];
+const AREAS=["東京都","神奈川県","埼玉県","千葉県","茨城県","栃木県","群馬県","全国対応"];
+const INS={
+  corp:[["社会保険","健康保険・厚生年金・雇用保険"],["労働者災害補償保険","労災保険"],["請負業者賠償責任保険",""],["建設業許可",""]],
+  sme:[["社会保険","健康保険・厚生年金・雇用保険"],["労働者災害補償保険 特別加入","労災保険"],["請負業者賠償責任保険",""],["建設業許可",""]],
+  solo:[["健康保険",""],["国民年金",""],["一人親方労災保険","政府労災"],["建設業許可",""]]
+};
+
+function tags(el,name,list){
+  $(el).innerHTML=list.map(t=>{const ic=MT.icon(t);return `<label><input type="checkbox" name="${name}" value="${t}"><span>${ic?`<i>${ic}</i>`:""}${t}</span></label>`}).join("");
+}
+tags("#trades","trade",TRADES);tags("#genres","genre",GENRES);tags("#areas","area",AREAS);
+const updCount=()=>{const n=$$('input[name=trade]:checked').length;$("#tradeCount").textContent=n?`${n}件選択中`:""};
+$("#trades").addEventListener("change",updCount);
+$("#pr").addEventListener("input",e=>$("#prCount").textContent=e.target.value.length);
+
+function renderIns(){
+  const t=$('input[name=type]:checked');
+  if(!t){$("#insList").innerHTML='<div class="ins-empty">STEP1で事業形態を選択してください</div>';return}
+  $("#typeLabel").textContent=`（${t.dataset.label}の場合）`;
+  $("#insList").innerHTML=INS[t.value].map(([n,s],i)=>`
+    <div class="ins-item"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <div class="t">${n}${s?`<small>${s}</small>`:""}</div>
+      <div class="yn">
+        <label><input type="radio" name="ins${i}" value="yes" data-name="${n}"><span>加入済</span></label>
+        <label><input type="radio" name="ins${i}" value="no" data-name="${n}"><span>未加入</span></label>
+      </div></div>`).join("");
+}
+
+// ---- files ----
+let files=[];
+const drop=$("#drop"),fileIn=$("#file");
+function addFiles(list){files=files.concat([...list]);drawFiles()}
+function drawFiles(){
+  $("#files").innerHTML=files.map((f,i)=>`<div><span>📄 ${f.name}</span><button type="button" data-i="${i}">削除</button></div>`).join("");
+}
+fileIn.addEventListener("change",e=>addFiles(e.target.files));
+["dragover","dragenter"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add("over")}));
+["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("over")}));
+drop.addEventListener("drop",e=>addFiles(e.dataTransfer.files));
+$("#files").addEventListener("click",e=>{if(e.target.dataset.i){files.splice(+e.target.dataset.i,1);drawFiles()}});
+
+// ---- validation ----
+function setErr(field,bad){field.classList.toggle("has-err",bad);field.querySelectorAll(".input").forEach(i=>i.classList.toggle("err",bad))}
+function validate(step){
+  const sec=$(`.fstep[data-step="${step}"]`);let ok=true;
+  sec.querySelectorAll("input.input[required],select.input[required]").forEach(inp=>{
+    const bad=!inp.value.trim()||!inp.checkValidity();setErr(inp.closest(".field"),bad);if(bad)ok=false;
+  });
+  if(step===1){const bad=!$('input[name=type]:checked');setErr(sec.querySelector(".choice").closest(".field"),bad);if(bad)ok=false}
+  if(step===2){
+    ["trade","area"].forEach(g=>{const bad=!$$(`input[name=${g}]:checked`).length;setErr(sec.querySelector(`[data-group=${g}]`),bad);if(bad)ok=false});
+  }
+  if(step===3){
+    const items=$$("#insList .ins-item");const answered=items.filter(it=>it.querySelector("input:checked")).length;
+    const bad=!items.length||answered<items.length;setErr(sec.querySelector("[data-group=ins]"),bad);if(bad)ok=false;
+  }
+  if(step===4){const bad=!$("#agree").checked;setErr($("#agree").closest(".field"),bad);if(bad)ok=false}
+  if(!ok){const f=sec.querySelector(".has-err");f&&f.scrollIntoView({behavior:"smooth",block:"center"})}
+  return ok;
+}
+// clear errors as the user fixes them
+$("#form").addEventListener("input",e=>{const f=e.target.closest(".field");if(f&&f.classList.contains("has-err"))setErr(f,false)});
+$("#form").addEventListener("change",e=>{const f=e.target.closest(".field");if(f&&f.classList.contains("has-err"))setErr(f,false)});
+
+// ---- confirm ----
+function buildConfirm(){
+  const v=id=>$("#"+id).value.trim()||"—";
+  const checked=n=>$$(`input[name=${n}]:checked`).map(i=>i.value).join("、")||"—";
+  const ins=$$("#insList input:checked").map(i=>`${i.dataset.name}：${i.value==="yes"?"加入済":"未加入"}`).join("<br>");
+  const rows=[
+    ["事業形態",$('input[name=type]:checked').dataset.label],["会社名・屋号",v("company")],["代表者名",v("rep")],["ご担当者名",v("person")],
+    ["電話番号",v("tel")],["メールアドレス",v("email")],["所在地",`${v("pref")} ${v("addr")}`],["ホームページ",v("url")],
+    ["対応業種",checked("trade")],["得意ジャンル",checked("genre")],["対応エリア",checked("area")],["実績件数",v("works")],["従業員数",v("staff")],
+    ["加入状況",ins],["建設業許可番号",v("license")],["添付書類",files.length?files.map(f=>f.name).join("<br>"):"なし（後日提出）"]
+  ];
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])).replace(/&lt;br&gt;/g,"<br>");
+  $("#confirm").innerHTML=rows.map(([k,val])=>`<div><dt>${k}</dt><dd>${esc(val)}</dd></div>`).join("");
+}
+
+// ---- step navigation ----
+let step=1;const LAST=4;
+function go(n){
+  step=n;
+  $$(".fstep").forEach(s=>s.classList.toggle("on",+s.dataset.step===n));
+  $$("#stepper li").forEach((li,i)=>{li.classList.toggle("on",i+1===n);li.classList.toggle("done",i+1<n)});
+  $("#bar").style.width=Math.min(n,LAST)/LAST*100+"%";
+  $("#prev").hidden=n===1||n>LAST;
+  $("#nav").style.display=n>LAST?"none":"";
+  $("#next").firstChild.textContent=n===LAST?"この内容で登録する ":"次へ ";
+  if(n===3)renderIns();
+  if(n===4)buildConfirm();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+$("#next").addEventListener("click",()=>{
+  if(!validate(step))return;
+  if(step===LAST){
+    // TODO: 本番ではここで Googleフォーム / スプレッドシート / API へ送信
+    go(LAST+1);return;
+  }
+  go(step+1);
+});
+$("#prev").addEventListener("click",()=>go(step-1));
+$$('input[name=type]').forEach(r=>r.addEventListener("change",renderIns));
+
+const hdr=$("#hdr");addEventListener("scroll",()=>hdr.classList.toggle("scrolled",scrollY>8),{passive:true});
+</script>
+</body>
+</html>
