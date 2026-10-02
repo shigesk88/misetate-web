@@ -279,3 +279,7 @@
   .k-badge-big em{font-size:36px}
   .k .k-badge-big.sm{font-size:17px}
 }
+.k-hero-photos .p1{object-position:42% 30%}
+.k-cta-photo img{object-position:center 30%}
+@media (max-width:640px){.k-hero-photos .p1{object-position:45% 25%}}
+.k-cta{padding:0}
