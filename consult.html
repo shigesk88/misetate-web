@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=202610021226">
+<link rel="stylesheet" href="assets/style.css?v=202610021253">
 </head>
 <body>
 
@@ -166,7 +166,7 @@
   </div>
 </main>
 
-<script src="assets/icons.js?v=202610021226"></script>
+<script src="assets/icons.js?v=202610021253"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 
@@ -194,6 +194,15 @@ $("#form").addEventListener("submit",e=>{
 });
 
 const hdr=$("#hdr");addEventListener("scroll",()=>hdr.classList.toggle("scrolled",scrollY>8),{passive:true});
+</script>
+<script>
+// トップページの「どんなお店をつくりますか？」から来たときは業態を選択済みにする
+(function(){
+  const map={restaurant:"飲食店",cafe:"カフェ",salon:"美容・サロン",clinic:"クリニック",retail:"物販",office:"オフィス",other:"その他"};
+  const v=map[new URLSearchParams(location.search).get("shop")];
+  const el=v&&document.querySelector('input[name="genre"][value="'+v+'"]');
+  if(el){el.checked=true;el.dispatchEvent(new Event("change",{bubbles:true}));}
+})();
 </script>
 </body>
 </html>
