@@ -330,3 +330,4 @@
   .k .k-photo-copy{left:18px;top:46%;bottom:auto}
   .k-hero-photos::after{clip-path:polygon(0 0,100% 0,100% 100%,0 86%)}
 }
+.k-steps li:nth-child(4n)::after{display:none}
