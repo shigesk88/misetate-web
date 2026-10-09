@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=202610091027">
+<link rel="stylesheet" href="assets/style.css?v=202610091447">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
       <ol class="stepper" id="stepper">
         <li class="on"><i>1</i>会社情報</li>
         <li><i>2</i>業種・エリア</li>
-        <li><i>3</i>保険・許可</li>
+        <li><i>3</i>許可・保険</li>
         <li><i>4</i>内容の確認</li>
       </ol>
       <div class="aside-card">
@@ -158,21 +158,51 @@
 
         <!-- STEP 3 -->
         <section class="fstep" data-step="3">
-          <h2 class="sh"><i data-ic="shield"></i>保険・許可</h2>
-          <p class="desc">事業形態に応じた必須の保険・制度への加入状況を教えてください。</p>
+          <h2 class="sh"><i data-ic="shield"></i>建設業許可・保険</h2>
+          <p class="desc">許可の内容と、事業形態に応じた保険・制度への加入状況を教えてください。</p>
+          <div class="lic-note">
+            <b>建設業許可は、工事金額にかかわらず登録の必須条件です</b>
+            建設業法では500万円未満の軽微な工事は許可がなくても請け負えますが、ミセタテでは一定の経営管理体制・技術力・財産的基礎を満たした施工会社にご参加いただくため、建設業許可の取得を必須としています。許可の内容（業種・有効期限）は審査にも活用します。
+          </div>
           <div class="fields">
+            <div class="field">
+              <label for="licAuth">許可行政庁<span class="req">必須</span></label>
+              <select class="input" id="licAuth" name="licAuth" required><option value="">選択してください</option><option>国土交通大臣</option><option>北海道知事</option><option>青森県知事</option><option>岩手県知事</option><option>宮城県知事</option><option>秋田県知事</option><option>山形県知事</option><option>福島県知事</option><option>茨城県知事</option><option>栃木県知事</option><option>群馬県知事</option><option>埼玉県知事</option><option>千葉県知事</option><option>東京都知事</option><option>神奈川県知事</option><option>新潟県知事</option><option>富山県知事</option><option>石川県知事</option><option>福井県知事</option><option>山梨県知事</option><option>長野県知事</option><option>岐阜県知事</option><option>静岡県知事</option><option>愛知県知事</option><option>三重県知事</option><option>滋賀県知事</option><option>京都府知事</option><option>大阪府知事</option><option>兵庫県知事</option><option>奈良県知事</option><option>和歌山県知事</option><option>鳥取県知事</option><option>島根県知事</option><option>岡山県知事</option><option>広島県知事</option><option>山口県知事</option><option>徳島県知事</option><option>香川県知事</option><option>愛媛県知事</option><option>高知県知事</option><option>福岡県知事</option><option>佐賀県知事</option><option>長崎県知事</option><option>熊本県知事</option><option>大分県知事</option><option>宮崎県知事</option><option>鹿児島県知事</option><option>沖縄県知事</option></select>
+              <span class="errmsg">選択してください</span>
+            </div>
+            <div class="field" data-group="licKind">
+              <span class="lbl">許可の区分<span class="req">必須</span></span>
+              <div class="seg-radio">
+                <label><input type="radio" name="licKind" value="一般"><span>一般建設業</span></label>
+                <label><input type="radio" name="licKind" value="特定"><span>特定建設業</span></label>
+              </div>
+              <span class="errmsg">選択してください</span>
+            </div>
+            <div class="field">
+              <label for="licNo">許可番号<span class="req">必須</span></label>
+              <div class="lic-no"><span>第</span><input class="input" id="licNo" name="licNo" inputmode="numeric" pattern="[0-9０-９]{1,6}" placeholder="123456" required><span>号</span></div>
+              <span class="hint">許可通知書に記載の番号（数字のみ）</span>
+              <span class="errmsg">許可番号を数字で入力してください</span>
+            </div>
+            <div class="field">
+              <label for="licExp">有効期限（満了日）<span class="req">必須</span></label>
+              <input class="input" id="licExp" name="licExp" type="date" required>
+              <span class="hint">建設業許可の有効期間は5年です</span>
+              <span class="errmsg" id="licExpErr">有効期限を入力してください</span>
+            </div>
+            <div class="field full" data-group="licTrade">
+              <span class="lbl">許可業種<span class="req">必須</span> <span class="count" id="licTradeCount"></span></span>
+              <div class="tagpick" id="licTrades"></div>
+              <span class="hint">許可を受けている業種をすべて選択してください（全29業種）</span>
+              <span class="errmsg">1つ以上選択してください</span>
+            </div>
             <div class="field full" data-group="ins">
-              <span class="lbl">加入状況<span class="req">必須</span> <span class="count" id="typeLabel"></span></span>
+              <span class="lbl">保険・制度の加入状況<span class="req">必須</span> <span class="count" id="typeLabel"></span></span>
               <div class="ins" id="insList"></div>
               <span class="errmsg">すべての項目に回答してください</span>
             </div>
             <div class="field full">
-              <label for="license">建設業許可番号<span class="req">必須</span></label>
-              <input class="input" id="license" name="license" placeholder="例）東京都知事 許可（般-6）第123456号" required>
-              <span class="errmsg">許可番号を入力してください</span>
-            </div>
-            <div class="field full">
-              <span class="lbl">許可証・保険証書の写し<span class="opt">任意</span></span>
+              <span class="lbl">許可通知書・保険証書の写し<span class="opt">後日提出可</span></span>
               <label class="drop" id="drop">
                 <input type="file" id="file" multiple accept="image/*,.pdf" hidden>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
@@ -224,26 +254,28 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="assets/icons.js?v=202610091027"></script>
+<script src="assets/icons.js?v=202610091447"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 
 // ---- master data (業種は精査中のサンプル) ----
 const TRADES=["内装仕上工事","電気工事","管工事","大工工事","左官工事","とび・土工・コンクリート工事","屋根工事","タイル・れんが・ブロック工事","鋼構造物工事","板金工事","ガラス工事","塗装工事","防水工事","建具工事","機械器具設置工事","熱絶縁工事","電気通信工事","消防施設工事","解体工事"];
+const LIC_TRADES=["土木一式工事","建築一式工事","大工工事","左官工事","とび・土工・コンクリート工事","石工事","屋根工事","電気工事","管工事","タイル・れんが・ブロック工事","鋼構造物工事","鉄筋工事","舗装工事","しゅんせつ工事","板金工事","ガラス工事","塗装工事","防水工事","内装仕上工事","機械器具設置工事","熱絶縁工事","電気通信工事","造園工事","さく井工事","建具工事","水道施設工事","消防施設工事","清掃施設工事","解体工事"];
 const GENRES=["飲食店","カフェ","物販","美容・サロン","クリニック","オフィス","フィットネス","その他"];
 const AREAS=["東京都","神奈川県","埼玉県","千葉県","茨城県","栃木県","群馬県","全国対応"];
 const INS={
-  corp:[["社会保険","健康保険・厚生年金・雇用保険"],["労働者災害補償保険","労災保険"],["請負業者賠償責任保険",""],["建設業許可",""]],
-  sme:[["社会保険","健康保険・厚生年金・雇用保険"],["労働者災害補償保険 特別加入","労災保険"],["請負業者賠償責任保険",""],["建設業許可",""]],
-  solo:[["健康保険",""],["国民年金",""],["一人親方労災保険","政府労災"],["建設業許可",""]]
+  corp:[["社会保険","健康保険・厚生年金・雇用保険"],["労働者災害補償保険","労災保険"],["請負業者賠償責任保険",""]],
+  sme:[["社会保険","健康保険・厚生年金・雇用保険"],["労働者災害補償保険 特別加入","労災保険"],["請負業者賠償責任保険",""]],
+  solo:[["健康保険",""],["国民年金",""],["一人親方労災保険","政府労災"]]
 };
 
 function tags(el,name,list){
   $(el).innerHTML=list.map(t=>{const ic=MT.icon(t);return `<label><input type="checkbox" name="${name}" value="${t}"><span>${ic?`<i>${ic}</i>`:""}${t}</span></label>`}).join("");
 }
-tags("#trades","trade",TRADES);tags("#genres","genre",GENRES);tags("#areas","area",AREAS);
+tags("#trades","trade",TRADES);tags("#licTrades","licTrade",LIC_TRADES);tags("#genres","genre",GENRES);tags("#areas","area",AREAS);
 const updCount=()=>{const n=$$('input[name=trade]:checked').length;$("#tradeCount").textContent=n?`${n}件選択中`:""};
 $("#trades").addEventListener("change",updCount);
+$("#licTrades").addEventListener("change",()=>{const n=$$("input[name=licTrade]:checked").length;$("#licTradeCount").textContent=n?`${n}件選択中`:""});
 $("#pr").addEventListener("input",e=>$("#prCount").textContent=e.target.value.length);
 
 function renderIns(){
@@ -284,6 +316,8 @@ function validate(step){
     ["trade","area"].forEach(g=>{const bad=!$$(`input[name=${g}]:checked`).length;setErr(sec.querySelector(`[data-group=${g}]`),bad);if(bad)ok=false});
   }
   if(step===3){
+    ["licKind","licTrade"].forEach(g=>{const bad=!$$(`input[name=${g}]:checked`).length;setErr(sec.querySelector(`[data-group=${g}]`),bad);if(bad)ok=false});
+    const exp=$("#licExp");if(exp.value){const expired=new Date(exp.value+"T23:59:59")<new Date();$("#licExpErr").textContent=expired?"有効期限が切れています。更新後の許可でご登録ください":"有効期限を入力してください";if(expired){setErr(exp.closest(".field"),true);ok=false}}else{$("#licExpErr").textContent="有効期限を入力してください"}
     const items=$$("#insList .ins-item");const answered=items.filter(it=>it.querySelector("input:checked")).length;
     const bad=!items.length||answered<items.length;setErr(sec.querySelector("[data-group=ins]"),bad);if(bad)ok=false;
   }
@@ -304,7 +338,7 @@ function buildConfirm(){
     ["事業形態",$('input[name=type]:checked').dataset.label],["会社名・屋号",v("company")],["代表者名",v("rep")],["ご担当者名",v("person")],
     ["電話番号",v("tel")],["メールアドレス",v("email")],["所在地",`${v("pref")} ${v("addr")}`],["ホームページ",v("url")],
     ["対応業種",checked("trade")],["得意ジャンル",checked("genre")],["対応エリア",checked("area")],["実績件数",v("works")],["従業員数",v("staff")],
-    ["加入状況",ins],["建設業許可番号",v("license")],["添付書類",files.length?files.map(f=>f.name).join("<br>"):"なし（後日提出）"]
+    ["建設業許可",`${v("licAuth")} 許可（${($('input[name=licKind]:checked')||{}).value==="特定"?"特":"般"}）第${v("licNo")}号`],["許可業種",checked("licTrade")],["許可の有効期限",v("licExp")],["保険・制度の加入状況",ins],["添付書類",files.length?files.map(f=>f.name).join("<br>"):"なし（後日提出）"]
   ];
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])).replace(/&lt;br&gt;/g,"<br>");
   $("#confirm").innerHTML=rows.map(([k,val])=>`<div><dt>${k}</dt><dd>${esc(val)}</dd></div>`).join("");
